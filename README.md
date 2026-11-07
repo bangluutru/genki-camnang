@@ -1,13 +1,13 @@
 # Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật
 
-Trang cổng thư viện điện tử (**Web Flipbook / PWA**) chia sẻ các bộ cẩm nang chăm sóc sức khỏe kiểu Nhật dành cho gia đình và người lớn tuổi Việt Nam.
+Trang cổng thư viện điện tử (**Web Flipbook / PWA**) chia sẻ 4 bộ cẩm nang chăm sóc sức khỏe kiểu Nhật dành cho gia đình và người lớn tuổi Việt Nam (tổng cộng **182 trang sách lật 3D** và **180 mục thực hành tương tác**).
 
 ## Cấu trúc thư mục
 
 ```text
 genki-camnang/
-├── index.html                  # Trang chủ Tủ sách Genki Cẩm Nang (chọn & tìm kiếm cẩm nang)
-├── catalog.json                # Danh mục dữ liệu các bộ cẩm nang & tập phát hành
+├── index.html                  # Trang chủ Tủ sách Genki Cẩm Nang (chọn & tìm kiếm 4 bộ cẩm nang)
+├── catalog.json                # Danh mục dữ liệu 4 bộ cẩm nang & các tập/chương phát hành
 ├── qr.js                       # Bộ tạo mã QR SVG & xuất ảnh thẻ QR PNG (Offline ISO/IEC 18004)
 ├── manifest.json               # Cấu hình Web App Manifest (PWA)
 ├── wrangler.jsonc              # Cấu hình triển khai Cloudflare Workers / Assets
@@ -17,26 +17,22 @@ genki-camnang/
 │   ├── qr.js                   # Bộ tạo QR nội tuyến
 │   ├── manifest.json           # PWA manifest của Cẩm nang Số 1
 │   └── anh/                    # 54 tệp hình ảnh minh họa của cẩm nang
-└── ngua-dot-quy/               # Cẩm nang Số 2: Đột quỵ — Người Nhật đã làm gì? (40 trang, Chương 1–6)
-    ├── index.html              # Sách lật 3D tương tác + Thẻ 115 + Sổ huyết áp 7 sáng + xuất PDF
+├── ngua-dot-quy/               # Cẩm nang Số 2: Đột quỵ — Người Nhật đã làm gì? (40 trang, Chương 1–6)
+│   ├── index.html              # Sách lật 3D tương tác + Thẻ 115 + Sổ huyết áp 7 sáng + Bắt mạch 15s
+│   ├── qr.js                   # Bộ tạo QR nội tuyến
+│   ├── manifest.json           # PWA manifest của Cẩm nang Số 2
+│   └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
+├── xuong-khop-deo-dai/         # Cẩm nang Số 3: Gân cốt dẻo dai tuổi 50+ (40 trang, Chương 1–6)
+│   ├── index.html              # Sách lật 3D tương tác + Đồng hồ 60s Hồng Hạc + Sổ gân cốt + Tính Đạm + Đo CS-30
+│   ├── qr.js                   # Bộ tạo QR nội tuyến
+│   ├── manifest.json           # PWA manifest của Cẩm nang Số 3
+│   └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
+└── an-ngon-ngu-sau/            # Cẩm nang Số 4: Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật (40 trang, Chương 1–6)
+    ├── index.html              # Sách lật 3D tương tác + Giờ vàng sinh học + Sổ giấc ngủ + Thở Tanden + Thẻ An Tâm
     ├── qr.js                   # Bộ tạo QR nội tuyến
-    ├── manifest.json           # PWA manifest của Cẩm nang Số 2
+    ├── manifest.json           # PWA manifest của Cẩm nang Số 4
     └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
 ```
-
-## Cách thêm một bộ Cẩm nang mới
-
-1. Tạo thư mục mới cùng cấp với `song-khoe-kieu-nhat/`, ví dụ `xuong-khop-deo-dai/index.html`.
-2. Mở tệp `catalog.json`, cập nhật mục tương ứng trong mảng `books`:
-   - Đổi `"status": "published"`
-   - Thêm đường dẫn `"path": "xuong-khop-deo-dai/"`
-3. Chạy lệnh đẩy lên GitHub và triển khai Cloudflare Pages:
-   ```bash
-   git add .
-   git commit -m "feat: add new handbook"
-   git push
-   npx wrangler pages deploy . --project-name=genki-camnang
-   ```
 
 ## Cá nhân hóa Đại lý / Nhà thuốc qua URL
 

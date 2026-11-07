@@ -1,0 +1,18 @@
+{
+  "name": "Cẩm nang Gân cốt dẻo dai tuổi 50+ — Người Nhật giữ đôi chân thế nào?",
+  "short_name": "Gân Cốt 50+",
+  "description": "Cẩm nang bảo vệ khớp gối, giữ thăng bằng và phòng té ngã kiểu Nhật: 7 câu tự kiểm Locomo, đứng 1 chân Hồng Hạc 60 giây, tập ghế Loco-Tre và dinh dưỡng Canxi – Vitamin K2.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#22365A",
+  "theme_color": "#22365A",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "anh/daruma-quyet-tam.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

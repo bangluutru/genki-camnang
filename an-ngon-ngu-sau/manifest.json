@@ -1,0 +1,18 @@
+{
+  "name": "Cẩm nang Ăn ngon ngủ sâu — Người Nhật dưỡng tâm thế nào?",
+  "short_name": "Ăn Ngon Ngủ Sâu",
+  "description": "Cẩm nang chăm sóc giấc ngủ và dưỡng tâm kiểu Nhật cho người lớn tuổi: tắm nắng sớm, ngâm chân ấm 40°C, bữa tối nhẹ bụng, thở bụng Tanden 4-7-8 và sổ đầu giường.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#22365A",
+  "theme_color": "#22365A",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "anh/daruma-vui.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
