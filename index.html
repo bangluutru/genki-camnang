@@ -1019,12 +1019,39 @@ a{color:inherit}
 }
 .seg-group{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3, 1fr);
   gap:6px;
   background:var(--paper);
   padding:4px;
   border-radius:10px;
   border:1px solid var(--line);
+}
+@media (max-width:480px){
+  .seg-group{grid-template-columns:1fr}
+}
+.book-tabs{
+  display:inline-flex;
+  gap:6px;
+  background:var(--paper);
+  padding:5px;
+  border-radius:99px;
+  border:1.5px solid var(--line);
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+.book-tab-btn{
+  all:unset;
+  cursor:pointer;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.94em;
+  padding:8px 16px;
+  border-radius:99px;
+  color:var(--ink-soft);
+}
+.book-tab-btn.active{
+  background:var(--shu);
+  color:#fff;
 }
 .seg-opt{
   all:unset;
@@ -1170,22 +1197,25 @@ a{color:inherit}
       </p>
       <div class="hero-stats">
         <div class="stat-chip">
-          <b>62</b>
-          <span>Trang sách lật 3D<br>Cẩm nang Số 1</span>
+          <b>102</b>
+          <span>Trang sách lật 3D<br>trên 2 bộ đang mở đọc</span>
         </div>
         <div class="stat-chip">
-          <b id="stat-checked-count">0 / 83</b>
+          <b id="stat-checked-count">0 / 116</b>
           <span>Mục thực hành &amp; dấu 7 ngày<br>đã đánh dấu trên máy bạn</span>
         </div>
         <div class="stat-chip">
-          <b>4</b>
-          <span>Chuyên đề cẩm nang<br>trong tủ sách Genki</span>
+          <b>2 / 4</b>
+          <span>Bộ cẩm nang đã phát hành<br>trong tủ sách Genki</span>
         </div>
       </div>
       <div class="hero-ctas">
         <a class="btn-hero-main js-book1-link" id="hero-read-btn" href="song-khoe-kieu-nhat/#bia">
-          <span>Đọc ngay Cẩm nang Số 1</span>
+          <span>Số 1: Sống khỏe kiểu Nhật (62 tr.)</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-hero-sub js-book2-link" id="hero-read-book2-btn" href="ngua-dot-quy/#bia" style="background:var(--jade);border-color:rgba(255,255,255,.35)">
+          <span>Số 2: Ngừa Đột Quỵ (40 tr.) ›</span>
         </a>
         <a class="btn-hero-sub" id="hero-continue-btn" href="song-khoe-kieu-nhat/#lam-thu-1" hidden>
           <span id="hero-continue-lbl">Đọc tiếp trang đang mở</span>
@@ -1244,17 +1274,22 @@ a{color:inherit}
     <div class="books-grid" id="books-grid"></div>
   </section>
 
-  <!-- Chọn nhanh từng Tập trong Cẩm nang Số 1 -->
+  <!-- Chọn nhanh từng Tập / Chương trong Cẩm nang Số 1 & Số 2 -->
   <section class="episodes-section" id="cac-tap-so-1">
     <div class="sec-head">
       <div>
-        <span class="sec-kicker">Cẩm nang Số 1 · Sống khỏe kiểu Nhật</span>
-        <h2 class="sec-title">Mở nhanh 12 Thói quen &amp; Bảng đóng dấu 7 ngày</h2>
-        <p class="sec-sub">Bấm vào từng tập để lật thẳng tới trang giải thích hoặc trang đánh dấu thực hành bữa tối.</p>
+        <span class="sec-kicker" id="ep-sec-kicker">Tra cứu nhanh theo từng Tập / Chương</span>
+        <h2 class="sec-title" id="ep-sec-title">Mở nhanh từng Chủ đề &amp; Công cụ thực hành</h2>
+        <p class="sec-sub">Chọn bộ cẩm nang bên dưới rồi bấm vào từng tập/chương để lật thẳng tới trang nội dung hoặc công cụ thực hành.</p>
       </div>
-      <a class="btn-pill btn-shu js-book1-link" href="song-khoe-kieu-nhat/#muc-luc" style="text-decoration:none">
+      <a class="btn-pill btn-shu" id="ep-open-toc-link" href="song-khoe-kieu-nhat/#muc-luc" style="text-decoration:none">
         <span>Xem Mục lục trong sách ›</span>
       </a>
+    </div>
+
+    <div class="book-tabs" role="tablist" aria-label="Chọn cẩm nang để xem danh sách chương">
+      <button type="button" class="book-tab-btn active" id="tab-book-1" data-book-idx="0">Số 1: Sống khỏe kiểu Nhật (12 tập)</button>
+      <button type="button" class="book-tab-btn" id="tab-book-2" data-book-idx="1">Số 2: Ngừa Đột Quỵ kiểu Nhật (9 chương)</button>
     </div>
 
     <div class="episodes-grid" id="episodes-grid"></div>
@@ -1307,8 +1342,9 @@ a{color:inherit}
     <div class="modal-sec">
       <h4>1. Chọn nội dung người nhận sẽ mở ra</h4>
       <div class="seg-group" role="group" aria-label="Chọn đích chia sẻ">
-        <button type="button" class="seg-opt active" id="seg-target-hub" data-target="hub">Toàn bộ Tủ sách Genki</button>
-        <button type="button" class="seg-opt" id="seg-target-book1" data-target="book1">Cẩm nang Số 1 (62 tr.)</button>
+        <button type="button" class="seg-opt active" id="seg-target-hub" data-target="hub">Tủ sách Genki</button>
+        <button type="button" class="seg-opt" id="seg-target-book1" data-target="book1">Số 1: Sống khỏe</button>
+        <button type="button" class="seg-opt" id="seg-target-book2" data-target="book2">Số 2: Ngừa Đột quỵ</button>
       </div>
     </div>
 
@@ -1361,8 +1397,8 @@ a{color:inherit}
       { id: "all", label: "Tất cả cẩm nang" },
       { id: "published", label: "Đang phát hành" },
       { id: "thoi-quen", label: "Dinh dưỡng & Thói quen" },
+      { id: "tim-mach", label: "Đột quỵ & Huyết áp" },
       { id: "van-dong", label: "Xương khớp & Vận động" },
-      { id: "tim-mach", label: "Tim mạch & Huyết áp" },
       { id: "tinh-than", label: "Giấc ngủ & Tinh thần" }
     ],
     books: [
@@ -1380,6 +1416,8 @@ a{color:inherit}
         episodesPublished: 8,
         episodesTotal: 12,
         path: "song-khoe-kieu-nhat/",
+        defaultPracticeHash: "lam-thu-1",
+        defaultPracticeLabel: "Bảng 7 ngày",
         coverImage: "song-khoe-kieu-nhat/anh/daruma-vui.webp",
         bannerImage: "song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg",
         storageProgressKey: "sk-nhat-mau-v1",
@@ -1392,14 +1430,14 @@ a{color:inherit}
           "Tích hợp bảng đánh dấu việc làm ngay từ bữa tối nay và con dấu đỏ 7 ngày (済)"
         ],
         episodes: [
-          { so: 1, nhom: "Ăn uống mỗi ngày", ten: "Ăn no tám phần", jp: "腹八分目", romaji: "Hara hachi bu", tomTat: "Rời bàn ăn khi bụng vừa êm — nhẹ bụng tối nay, khỏe người mai sau.", hash: "c1", practiceHash: "lam-thu-1", status: "published" },
-          { so: 2, nhom: "Ăn uống mỗi ngày", ten: "Bớt mặn kiểu Nagano", jp: "減塩", romaji: "Gen'en · Tỉnh Nagano", tomTat: "Mẹo nấu bát canh rau đầy và chấm gắp giúp giảm muối mà cơm vẫn đậm đà.", hash: "c2", practiceHash: "lam-thu-2", status: "published" },
-          { so: 3, nhom: "Ăn uống mỗi ngày", ten: "Bữa cơm nhiều đĩa nhỏ", jp: "一汁三菜", romaji: "Ichijū sansai", tomTat: "Một canh ba món nhỏ giúp ăn đủ rau, đạm, cá mà không lo quá no.", hash: "c3", practiceHash: "lam-thu-3", status: "published" },
-          { so: 4, nhom: "Ăn uống mỗi ngày", ten: "Rau, rong biển và cá nhỏ", jp: "海藻と青魚", romaji: "Kaisō to aozakana", tomTat: "Bổ sung chất xơ hòa tan và EPA/DHA tự nhiên từ cá nục, cá thu, rong biển.", hash: "c4", practiceHash: "lam-thu-4", status: "published" },
-          { so: 5, nhom: "Ăn uống mỗi ngày", ten: "Đậu nành lên men (Natto)", jp: "納豆", romaji: "Nattō · Món sợi kéo dài", tomTat: "Enzyme Nattokinase và Vitamin K2 bảo vệ mạch máu và xương khớp tuổi già.", hash: "c5", practiceHash: "lam-thu-5", status: "published" },
-          { so: 6, nhom: "Vận động & Nghỉ ngơi", ten: "Thể dục buổi sáng 3 phút", jp: "ラジオ体操", romaji: "Rajio taisō", tomTat: "13 động tác đánh thức khớp vai, lưng và nhịp thở theo đài phát thanh Nhật.", hash: "c6", practiceHash: "lam-thu-6", status: "published" },
-          { so: 7, nhom: "Vận động & Nghỉ ngơi", ten: "Đi bộ xen nhanh – chậm", jp: "インターバル速歩", romaji: "Intābaru sokuho", tomTat: "3 phút đi chậm xen 3 phút đi rảo bước giúp khỏe cơ đùi và giảm huyết áp.", hash: "c7", practiceHash: "lam-thu-7", status: "published" },
-          { so: 8, nhom: "Tinh thần & Gắn kết", ten: "Ikigai: có việc để mong mỗi sáng", jp: "生きがい", romaji: "Ikigai · Niềm vui sống", tomTat: "Chăm chậu cây, dạy cháu học hay trò chuyện cùng hội bạn già giúp sống vui khỏe.", hash: "c8", practiceHash: "lam-thu-8", status: "published", moi: true },
+          { so: 1, nhom: "Ăn uống mỗi ngày", ten: "Ăn no tám phần", jp: "腹八分目", romaji: "Hara hachi bu", tomTat: "Rời bàn ăn khi bụng vừa êm — nhẹ bụng tối nay, khỏe người mai sau.", hash: "thoi-quen-1", practiceHash: "lam-thu-1", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 2, nhom: "Ăn uống mỗi ngày", ten: "Bớt mặn kiểu Nagano", jp: "減塩", romaji: "Gen'en · Tỉnh Nagano", tomTat: "Mẹo nấu bát canh rau đầy và chấm gắp giúp giảm muối mà cơm vẫn đậm đà.", hash: "thoi-quen-2", practiceHash: "lam-thu-2", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 3, nhom: "Ăn uống mỗi ngày", ten: "Bữa cơm nhiều đĩa nhỏ", jp: "一汁三菜", romaji: "Ichijū sansai", tomTat: "Một canh ba món nhỏ giúp ăn đủ rau, đạm, cá mà không lo quá no.", hash: "thoi-quen-3", practiceHash: "lam-thu-3", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 4, nhom: "Ăn uống mỗi ngày", ten: "Rau, rong biển và cá nhỏ", jp: "海藻と青魚", romaji: "Kaisō to aozakana", tomTat: "Bổ sung chất xơ hòa tan và EPA/DHA tự nhiên từ cá nục, cá thu, rong biển.", hash: "thoi-quen-4", practiceHash: "lam-thu-4", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 5, nhom: "Ăn uống mỗi ngày", ten: "Đậu nành lên men (Natto)", jp: "納豆", romaji: "Nattō · Món sợi kéo dài", tomTat: "Enzyme Nattokinase và Vitamin K2 bảo vệ mạch máu và xương khớp tuổi già.", hash: "thoi-quen-5", practiceHash: "lam-thu-5", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 6, nhom: "Vận động & Nghỉ ngơi", ten: "Thể dục buổi sáng 3 phút", jp: "ラジオ体操", romaji: "Rajio taisō", tomTat: "13 động tác đánh thức khớp vai, lưng và nhịp thở theo đài phát thanh Nhật.", hash: "thoi-quen-6", practiceHash: "lam-thu-6", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 7, nhom: "Vận động & Nghỉ ngơi", ten: "Đi bộ xen nhanh – chậm", jp: "インターバル速歩", romaji: "Intābaru sokuho", tomTat: "3 phút đi chậm xen 3 phút đi rảo bước giúp khỏe cơ đùi và giảm huyết áp.", hash: "thoi-quen-7", practiceHash: "lam-thu-7", practiceLabel: "Đóng dấu 7 ngày", status: "published" },
+          { so: 8, nhom: "Tinh thần & Gắn kết", ten: "Ikigai: có việc để mong mỗi sáng", jp: "生きがい", romaji: "Ikigai · Niềm vui sống", tomTat: "Chăm chậu cây, dạy cháu học hay trò chuyện cùng hội bạn già giúp sống vui khỏe.", hash: "thoi-quen-8", practiceHash: "lam-thu-8", practiceLabel: "Đóng dấu 7 ngày", status: "published", moi: true },
           { so: 9, nhom: "Vận động & Nghỉ ngơi", ten: "Tắm ấm đúng cách trước giờ ngủ", jp: "入浴", romaji: "Nyūyoku", tomTat: "Làm ấm cơ thể an toàn, tránh sốc nhiệt và giúp dễ vào giấc ngủ sâu.", status: "upcoming" },
           { so: 10, nhom: "Ăn uống mỗi ngày", ten: "Uống trà xanh mỗi chiều", jp: "緑茶", romaji: "Ryokucha", tomTat: "Thưởng trà giàu Catechin đúng khung giờ không gây mất ngủ ban đêm.", status: "upcoming" },
           { so: 11, nhom: "Tinh thần & Gắn kết", ten: "Trò chuyện mỗi ngày (Moai)", jp: "模合", romaji: "Moai · Hội bạn già Okinawa", tomTat: "Gắn kết bạn bè, hàng xóm giúp tinh thần minh mẫn và giảm cô đơn.", status: "upcoming" },
@@ -1407,8 +1445,47 @@ a{color:inherit}
         ]
       },
       {
-        id: "xuong-khop-deo-dai",
+        id: "ngua-dot-quy",
         number: "Cẩm nang Số 2",
+        kanji: "予防",
+        title: "Đột quỵ: Người Nhật đã làm gì?",
+        subtitle: "Đột quỵ từng là nguyên nhân tử vong số 1 ở Nhật. Người Nhật đã đẩy lùi nó bằng những việc nhà mình cũng làm được",
+        category: "tim-mach",
+        status: "published",
+        statusLabel: "Đang mở đọc · Chương 1–6",
+        badge: "MỚI · Sổ huyết áp & Bắt mạch",
+        pagesCount: 40,
+        episodesPublished: 6,
+        episodesTotal: 9,
+        path: "ngua-dot-quy/",
+        defaultPracticeHash: "so-huyet-ap",
+        defaultPracticeLabel: "Sổ huyết áp 7 sáng",
+        coverImage: "ngua-dot-quy/anh/daruma-quyet-tam.webp",
+        bannerImage: "ngua-dot-quy/anh/c1-mo-chuong.jpg",
+        storageProgressKey: "dq-mau-v1",
+        storageLastPageKey: "dq-nhat-last-page-v1",
+        totalCheckItems: 33,
+        tags: ["Nhận biết BE FAST", "Huyết áp Hisayama", "Phòng Heat Shock", "Muối nhẹ Karushio", "Bắt mạch 15 giây", "Thẻ gọi 115"],
+        highlights: [
+          "Sách lật 40 trang: 3 phép thử Mặt – Tay – Lời nhận diện đột quỵ trong 1 phút",
+          "Tích hợp Sổ đo huyết áp 7 buổi sáng tự tính trung bình & Thẻ gọi cấp cứu 115",
+          "Đồng hồ đếm ngược 15 giây tự bắt mạch phát hiện sớm rung nhĩ & bộ đổi nhãn muối"
+        ],
+        episodes: [
+          { so: 1, nhom: "Hiểu đúng & Nguy cơ", ten: "Đột quỵ là gì, nhà mình có nguy cơ không?", jp: "脳", romaji: "Nōsotchū to wa", tomTat: "Phân biệt tắc mạch và vỡ mạch, tự kiểm tra 9 yếu tố nguy cơ của bố mẹ.", hash: "c1-mo", practiceHash: "c1-lam-thu", practiceLabel: "Đếm yếu tố nguy cơ", status: "published" },
+          { so: 2, nhom: "Cấp cứu giờ vàng", ten: "Nhận ra đột quỵ trong 1 phút, gọi 115 kịp lúc", jp: "脳卒中", romaji: "ACT FAST · BE FAST", tomTat: "Ba phép thử Mặt – Tay – Lời, những mẹo dân gian tuyệt đối tránh và Thẻ gọi 115.", hash: "c2-mo", practiceHash: "c2-lam-thu", practiceLabel: "Thẻ gọi 115", status: "published" },
+          { so: 3, nhom: "Huyết áp buổi sáng", ten: "Đo huyết áp buổi sáng, bài học từ Hisayama", jp: "血圧", romaji: "Katei ketsuatsu · Thị trấn Hisayama", tomTat: "Vì sao ngưỡng đo ở nhà là 135/85 và sổ theo dõi huyết áp 7 buổi sáng liền.", hash: "c3-mo", practiceHash: "so-huyet-ap", practiceLabel: "Sổ huyết áp 7 sáng", status: "published" },
+          { so: 4, nhom: "An toàn mùa lạnh", ten: "Tắm mùa đông sao cho an toàn với bố mẹ", jp: "入浴", romaji: "Nyūyoku · Phòng Heat Shock", tomTat: "Tránh cú sốc nhiệt khi bước vào phòng tắm lạnh và 4 nguyên tắc tắm ấm dưới 41°C.", hash: "c4-mo", practiceHash: "c4-lam-thu", practiceLabel: "Đóng dấu 7 tối", status: "published" },
+          { so: 5, nhom: "Dinh dưỡng mạch máu", ten: "Ăn nhạt mà vẫn ngon kiểu Nhật (Karushio)", jp: "減塩", romaji: "Karushio · Vị Umami", tomTat: "Bí quyết nấu nước dùng đậm vị umami của Viện Tim mạch Osaka và công cụ đổi Natri ra muối.", hash: "c5-mo", practiceHash: "c5-lam-thu", practiceLabel: "Đổi Natri & 7 ngày", status: "published" },
+          { so: 6, nhom: "Nhịp tim & Rung nhĩ", ten: "Bắt mạch 15 giây, biết sớm tim đập loạn", jp: "脈", romaji: "Myaku no hi · Ngày bắt mạch 9/3", tomTat: "Đồng hồ đếm ngược 15 giây ngay trên trang sách giúp phát hiện sớm nhịp tim không đều.", hash: "c6-mo", practiceHash: "c6-lam-thu", practiceLabel: "Bấm giờ bắt mạch", status: "published", moi: true },
+          { so: 7, nhom: "Vận động phòng bệnh", ten: "Đi bộ bao nhiêu là đủ để phòng đột quỵ?", jp: "歩行", romaji: "Hokō", tomTat: "Nhịp đi bộ vừa sức giúp giữ mạch máu mềm mại mà không làm tăng huyết áp đột ngột.", status: "upcoming" },
+          { so: 8, nhom: "Tầm soát sớm", ten: "Đột quỵ thầm lặng: não tổn thương mà không biết", jp: "無症候", romaji: "Kakure nōkōsoku", tomTat: "Nhận diện những dấu hiệu nhỏ thoáng qua và tầm soát não định kỳ.", status: "upcoming" },
+          { so: 9, nhom: "Tổng kết thực hành", ten: "10 điều người Nhật làm để phòng đột quỵ", jp: "十か条", romaji: "Nōsotchū yobō jūkajō", tomTat: "Bản tóm tắt 10 nguyên tắc vàng của Hiệp hội Đột quỵ Nhật Bản treo tại nhà.", status: "upcoming" }
+        ]
+      },
+      {
+        id: "xuong-khop-deo-dai",
+        number: "Cẩm nang Số 3",
         kanji: "筋骨",
         title: "Gân cốt dẻo dai tuổi 50+",
         subtitle: "Bài tập giữ thăng bằng, bảo vệ khớp gối và phòng té ngã kiểu người cao tuổi Nhật Bản",
@@ -1424,26 +1501,6 @@ a{color:inherit}
           "Đứng một chân mở mắt 1 phút mỗi sáng (bài tập Flamingo tăng mật độ xương)",
           "Tư thế đứng dậy, ngồi xuống và lên cầu thang không làm mòn sụn khớp gối",
           "Thực đơn bổ sung Canxi, Vitamin D và đạm dễ tiêu cho người lớn tuổi"
-        ]
-      },
-      {
-        id: "mach-mau-huyet-ap",
-        number: "Cẩm nang Số 3",
-        kanji: "血管",
-        title: "Chăm sóc Mạch máu & Huyết áp 4 mùa",
-        subtitle: "Phòng sốc nhiệt mùa lạnh, giữ mạch máu mềm mại và theo dõi huyết áp tại nhà đúng chuẩn",
-        category: "tim-mach",
-        status: "upcoming",
-        statusLabel: "Sắp ra mắt · 8 tập",
-        pagesCount: 52,
-        episodesPublished: 0,
-        episodesTotal: 8,
-        bannerImage: "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
-        tags: ["Huyết áp", "Mạch máu", "Phòng sốc nhiệt", "Đo huyết áp"],
-        highlights: [
-          "Quy tắc làm ấm phòng tắm và nhà vệ sinh tránh sốc nhiệt (Heat shock) mùa đông",
-          "Khung giờ vàng đo và ghi sổ huyết áp sáng – tối để bác sĩ dễ theo dõi",
-          "Kết hợp Natto, cá biển xanh và giảm muối giúp thành mạch bền vững"
         ]
       },
       {
@@ -1471,13 +1528,16 @@ a{color:inherit}
 
   const AGENCY_KEY = 'sk-nhat-agency-v1';
   const FONT_KEY = 'sk-nhat-large-font-v1';
-  const PROGRESS_KEY = 'sk-nhat-mau-v1';
-  const LAST_PAGE_KEY = 'sk-nhat-last-page-v1';
+  const PROGRESS_KEY_1 = 'sk-nhat-mau-v1';
+  const LAST_PAGE_KEY_1 = 'sk-nhat-last-page-v1';
+  const PROGRESS_KEY_2 = 'dq-mau-v1';
+  const LAST_PAGE_KEY_2 = 'dq-nhat-last-page-v1';
 
   let catalogData = FALLBACK_CATALOG;
   let activeCategory = 'all';
   let searchQuery = '';
   let shareTarget = 'hub';
+  let activeEpisodeBookIdx = 0;
 
   function cleanPhone(raw){
     return String(raw || '').replace(/[^\d+]/g, '').trim();
@@ -1520,11 +1580,11 @@ a{color:inherit}
     return basePath + suffix + (hash ? ('#' + hash) : '');
   }
 
-  // Đọc tiến độ thực hành từ localStorage
+  // Đọc tiến độ thực hành từ localStorage (chỉ đếm các mục boolean true)
   function getBookProgress(progressKey){
     try{
       const saved = JSON.parse(localStorage.getItem(progressKey) || '{}') || {};
-      return Object.values(saved).filter(Boolean).length;
+      return Object.values(saved).filter(v => v === true).length;
     }catch(e){
       return 0;
     }
@@ -1565,12 +1625,18 @@ a{color:inherit}
       banner.hidden = true;
     }
 
-    // Cập nhật các link dẫn vào Cẩm nang Số 1 để giữ ?daily=...&zalo=...
+    // Cập nhật các link dẫn vào Cẩm nang Số 1 & Số 2 để giữ ?daily=...&zalo=...
     document.querySelectorAll('.js-book1-link').forEach(a => {
       const rawHref = a.getAttribute('href') || 'song-khoe-kieu-nhat/#bia';
       const hashIdx = rawHref.indexOf('#');
       const hash = hashIdx >= 0 ? rawHref.slice(hashIdx + 1) : 'bia';
       a.setAttribute('href', buildBookHref('song-khoe-kieu-nhat/', hash));
+    });
+    document.querySelectorAll('.js-book2-link').forEach(a => {
+      const rawHref = a.getAttribute('href') || 'ngua-dot-quy/#bia';
+      const hashIdx = rawHref.indexOf('#');
+      const hash = hashIdx >= 0 ? rawHref.slice(hashIdx + 1) : 'bia';
+      a.setAttribute('href', buildBookHref('ngua-dot-quy/', hash));
     });
 
     try{
@@ -1584,16 +1650,26 @@ a{color:inherit}
   }
 
   function updateHeroProgress(){
-    const checked = getBookProgress(PROGRESS_KEY);
-    document.getElementById('stat-checked-count').textContent = checked + ' / 83';
+    const checked1 = getBookProgress(PROGRESS_KEY_1);
+    const checked2 = getBookProgress(PROGRESS_KEY_2);
+    document.getElementById('stat-checked-count').textContent = (checked1 + checked2) + ' / 116';
 
-    const lastPage = getBookLastPage(LAST_PAGE_KEY);
+    const last1 = getBookLastPage(LAST_PAGE_KEY_1);
+    const last2 = getBookLastPage(LAST_PAGE_KEY_2);
     const contBtn = document.getElementById('hero-continue-btn');
     const contLbl = document.getElementById('hero-continue-lbl');
-    if(lastPage && lastPage.hash && lastPage.page > 1){
+
+    let chosen = null;
+    if(last2 && last2.hash && last2.page > 1 && (!last1 || (last2.ts || 0) >= (last1.ts || 0))){
+      chosen = { path: 'ngua-dot-quy/', label: 'Số 2', data: last2, total: 40 };
+    }else if(last1 && last1.hash && last1.page > 1){
+      chosen = { path: 'song-khoe-kieu-nhat/', label: 'Số 1', data: last1, total: 62 };
+    }
+
+    if(chosen){
       contBtn.hidden = false;
-      contBtn.href = buildBookHref('song-khoe-kieu-nhat/', lastPage.hash);
-      contLbl.textContent = 'Đọc tiếp (Trang ' + lastPage.page + '/' + (lastPage.total || 62) + ')';
+      contBtn.href = buildBookHref(chosen.path, chosen.data.hash);
+      contLbl.textContent = 'Đọc tiếp ' + chosen.label + ' (Tr. ' + chosen.data.page + '/' + (chosen.data.total || chosen.total) + ')';
     }else{
       contBtn.hidden = true;
     }
@@ -1658,15 +1734,17 @@ a{color:inherit}
 
       const bannerUrl = b.bannerImage || b.coverImage;
       const openHref = isPub ? buildBookHref(b.path, 'bia') : '#';
+      const defaultPracHash = b.defaultPracticeHash || 'lam-thu-1';
+      const defaultPracLbl = b.defaultPracticeLabel || 'Bảng 7 ngày';
 
       let footerHtml = '';
       if(isPub){
         const contHref = (lastPage && lastPage.hash && lastPage.page > 1)
           ? buildBookHref(b.path, lastPage.hash)
-          : buildBookHref(b.path, 'lam-thu-1');
+          : buildBookHref(b.path, defaultPracHash);
         const contText = (lastPage && lastPage.hash && lastPage.page > 1)
           ? ('Đọc tiếp tr. ' + lastPage.page)
-          : 'Bảng 7 ngày';
+          : defaultPracLbl;
         footerHtml = `
           <a class="btn-card-primary" href="${openHref}">Mở đọc Cẩm nang (${b.pagesCount} tr.) ›</a>
           <a class="btn-card-secondary" href="${contHref}">${contText}</a>
@@ -1686,6 +1764,8 @@ a{color:inherit}
         </div>
       ` : '';
 
+      const unitWord = b.id === 'ngua-dot-quy' ? 'chương' : 'tập';
+
       card.innerHTML = `
         <div class="book-card-banner">
           <img src="${bannerUrl}" alt="${b.title}" loading="lazy">
@@ -1696,7 +1776,7 @@ a{color:inherit}
             </div>
             <div class="card-kanji-row">
               <span class="card-kanji">${b.kanji || ''}</span>
-              <span class="card-meta-pill">${b.episodesPublished}/${b.episodesTotal} tập · ${b.pagesCount} trang</span>
+              <span class="card-meta-pill">${b.episodesPublished}/${b.episodesTotal} ${unitWord} · ${b.pagesCount} trang</span>
             </div>
           </div>
         </div>
@@ -1734,11 +1814,20 @@ a{color:inherit}
   function renderEpisodes(){
     const grid = document.getElementById('episodes-grid');
     grid.innerHTML = '';
-    const book1 = (catalogData.books || [])[0];
-    if(!book1 || !book1.episodes) return;
+    const books = catalogData.books || [];
+    const activeBook = books[activeEpisodeBookIdx] || books[0];
+    if(!activeBook || !activeBook.episodes) return;
+
+    const isBook2 = activeBook.id === 'ngua-dot-quy';
+    const unitTitle = isBook2 ? 'Chương' : 'Tập';
+    const tocLink = document.getElementById('ep-open-toc-link');
+    if(tocLink){
+      tocLink.href = buildBookHref(activeBook.path, 'muc-luc');
+      tocLink.textContent = isBook2 ? 'Mở Mục lục Sách Số 2 ›' : 'Mở Mục lục Sách Số 1 ›';
+    }
 
     const q = searchQuery.trim().toLowerCase();
-    const eps = book1.episodes.filter(ep => {
+    const eps = activeBook.episodes.filter(ep => {
       if(!q) return true;
       return (ep.ten + ' ' + ep.romaji + ' ' + ep.tomTat + ' ' + ep.nhom).toLowerCase().includes(q);
     });
@@ -1748,20 +1837,21 @@ a{color:inherit}
       const card = document.createElement('div');
       card.className = 'ep-card ' + (isPub ? 'published' : 'upcoming');
 
-      const readHref = isPub ? buildBookHref(book1.path, ep.hash) : '#';
-      const checkHref = isPub ? buildBookHref(book1.path, ep.practiceHash) : '#';
+      const readHref = isPub ? buildBookHref(activeBook.path, ep.hash) : '#';
+      const checkHref = isPub ? buildBookHref(activeBook.path, ep.practiceHash) : '#';
+      const pracLabel = ep.practiceLabel || 'Đóng dấu 7 ngày';
 
       card.innerHTML = `
         <div class="ep-top">
-          <span class="ep-num"><b>${ep.so}</b> Tập ${ep.so}${ep.moi ? ' · MỚI' : ''}</span>
+          <span class="ep-num"><b>${ep.so}</b> ${unitTitle} ${ep.so}${ep.moi ? ' · MỚI' : ''}</span>
           <span class="ep-kanji">${ep.jp || ''}</span>
         </div>
         <h3 class="ep-title">${ep.ten}</h3>
         <p class="ep-desc">${ep.tomTat}</p>
         <div class="ep-actions">
           ${isPub ? `
-            <a class="ep-link-read" href="${readHref}">Đọc Tập ${ep.so} ›</a>
-            <a class="ep-link-check" href="${checkHref}" title="Mở trang đóng dấu 7 ngày">Đóng dấu 7 ngày</a>
+            <a class="ep-link-read" href="${readHref}">Đọc ${unitTitle} ${ep.so} ›</a>
+            <a class="ep-link-check" href="${checkHref}" title="Mở trang thực hành">${pracLabel}</a>
           ` : `
             <span class="ep-soon-tag">Đang biên soạn · Sắp ra mắt</span>
           `}
@@ -1771,28 +1861,47 @@ a{color:inherit}
     });
   }
 
+  const tabBook1 = document.getElementById('tab-book-1');
+  const tabBook2 = document.getElementById('tab-book-2');
+  if(tabBook1 && tabBook2){
+    tabBook1.addEventListener('click', () => {
+      activeEpisodeBookIdx = 0;
+      tabBook1.classList.add('active');
+      tabBook2.classList.remove('active');
+      renderEpisodes();
+    });
+    tabBook2.addEventListener('click', () => {
+      activeEpisodeBookIdx = 1;
+      tabBook2.classList.add('active');
+      tabBook1.classList.remove('active');
+      renderEpisodes();
+    });
+  }
+
   // ---------- Chia sẻ & Thẻ QR ----------
   const modal = document.getElementById('share-modal');
   const inpName = document.getElementById('inp-agency-name');
   const inpZalo = document.getElementById('inp-agency-zalo');
   const segHub = document.getElementById('seg-target-hub');
   const segBook1 = document.getElementById('seg-target-book1');
+  const segBook2 = document.getElementById('seg-target-book2');
   const urlBox = document.getElementById('share-url-box');
   const qrBox = document.getElementById('qr-preview-box');
 
   function buildShareUrl(){
     const originBase = (location.origin && location.origin !== 'null')
       ? (location.origin + location.pathname.replace(/index\.html$/, ''))
-      : 'https://genki-camnang.pages.dev/';
-    const targetUrl = shareTarget === 'book1'
-      ? new URL('song-khoe-kieu-nhat/', originBase)
-      : new URL('./', originBase);
+      : 'https://genki-camnang.bangluutru.workers.dev/';
+    let relPath = './';
+    if(shareTarget === 'book1') relPath = 'song-khoe-kieu-nhat/';
+    else if(shareTarget === 'book2') relPath = 'ngua-dot-quy/';
+    const targetUrl = new URL(relPath, originBase);
 
     const d = inpName.value.trim();
     const z = cleanPhone(inpZalo.value);
     if(d) targetUrl.searchParams.set('daily', d);
     if(z) targetUrl.searchParams.set('zalo', z);
-    if(shareTarget === 'book1') targetUrl.hash = 'bia';
+    if(shareTarget === 'book1' || shareTarget === 'book2') targetUrl.hash = 'bia';
     return targetUrl.toString();
   }
 
@@ -1836,18 +1945,16 @@ a{color:inherit}
   modal.addEventListener('click', e => { if(e.target === modal) closeShareModal(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal.hidden) closeShareModal(); });
 
-  segHub.addEventListener('click', () => {
-    shareTarget = 'hub';
-    segHub.classList.add('active');
-    segBook1.classList.remove('active');
+  function setShareTarget(target){
+    shareTarget = target;
+    segHub.classList.toggle('active', target === 'hub');
+    segBook1.classList.toggle('active', target === 'book1');
+    if(segBook2) segBook2.classList.toggle('active', target === 'book2');
     updateModalPreview();
-  });
-  segBook1.addEventListener('click', () => {
-    shareTarget = 'book1';
-    segBook1.classList.add('active');
-    segHub.classList.remove('active');
-    updateModalPreview();
-  });
+  }
+  segHub.addEventListener('click', () => setShareTarget('hub'));
+  segBook1.addEventListener('click', () => setShareTarget('book1'));
+  if(segBook2) segBook2.addEventListener('click', () => setShareTarget('book2'));
 
   inpName.addEventListener('input', saveAgencyFromModal);
   inpZalo.addEventListener('input', saveAgencyFromModal);
@@ -1882,7 +1989,7 @@ a{color:inherit}
         ? ('Genki Cẩm Nang — Quà tặng từ ' + agencyState.daily)
         : 'Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật';
       try{
-        await navigator.share({ title, text: 'Tủ sách cẩm nang Sống khỏe kiểu Nhật dễ làm ngay tại nhà:', url });
+        await navigator.share({ title, text: 'Tủ sách cẩm nang Sống khỏe & Ngừa đột quỵ kiểu Nhật dễ làm ngay tại nhà:', url });
       }catch(e){}
     });
   }
@@ -1890,8 +1997,11 @@ a{color:inherit}
   document.getElementById('btn-download-qr').addEventListener('click', () => {
     if(!window.SimpleQR) return;
     const url = buildShareUrl();
+    let cardTitle = 'Tủ sách Genki Cẩm Nang';
+    if(shareTarget === 'book1') cardTitle = 'Sống khỏe kiểu Nhật';
+    else if(shareTarget === 'book2') cardTitle = 'Đột quỵ: Người Nhật đã làm gì?';
     window.SimpleQR.downloadCard(url, {
-      title: shareTarget === 'book1' ? 'Sống khỏe kiểu Nhật' : 'Tủ sách Genki Cẩm Nang',
+      title: cardTitle,
       sub: 'Quét mã QR bằng Zalo hoặc Camera để mở đọc',
       agency: agencyState.daily || 'HSC · Genki Fami',
       zalo: formatPhoneDisplay(agencyState.zalo)

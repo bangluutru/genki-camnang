@@ -10,12 +10,18 @@ genki-camnang/
 ├── catalog.json                # Danh mục dữ liệu các bộ cẩm nang & tập phát hành
 ├── qr.js                       # Bộ tạo mã QR SVG & xuất ảnh thẻ QR PNG (Offline ISO/IEC 18004)
 ├── manifest.json               # Cấu hình Web App Manifest (PWA)
-├── _headers                    # Cấu hình HTTP headers cho Cloudflare Pages
-└── song-khoe-kieu-nhat/        # Cẩm nang Số 1: Sống khỏe kiểu Nhật (62 trang, Tập 1–8)
-    ├── index.html              # Sách lật 3D tương tác + đóng dấu 7 ngày (済) + xuất PDF
+├── wrangler.jsonc              # Cấu hình triển khai Cloudflare Workers / Assets
+├── _headers                    # Cấu hình HTTP headers cho Cloudflare
+├── song-khoe-kieu-nhat/        # Cẩm nang Số 1: Sống khỏe kiểu Nhật (62 trang, Tập 1–8)
+│   ├── index.html              # Sách lật 3D tương tác + đóng dấu 7 ngày (済) + xuất PDF
+│   ├── qr.js                   # Bộ tạo QR nội tuyến
+│   ├── manifest.json           # PWA manifest của Cẩm nang Số 1
+│   └── anh/                    # 54 tệp hình ảnh minh họa của cẩm nang
+└── ngua-dot-quy/               # Cẩm nang Số 2: Đột quỵ — Người Nhật đã làm gì? (40 trang, Chương 1–6)
+    ├── index.html              # Sách lật 3D tương tác + Thẻ 115 + Sổ huyết áp 7 sáng + xuất PDF
     ├── qr.js                   # Bộ tạo QR nội tuyến
-    ├── manifest.json           # PWA manifest của Cẩm nang Số 1
-    └── anh/                    # 54 tệp hình ảnh minh họa của cẩm nang
+    ├── manifest.json           # PWA manifest của Cẩm nang Số 2
+    └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
 ```
 
 ## Cách thêm một bộ Cẩm nang mới

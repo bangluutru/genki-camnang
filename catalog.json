@@ -3,14 +3,14 @@
     "name": "Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật",
     "shortName": "Genki Cẩm Nang",
     "publisher": "HSC · Genki Fami",
-    "description": "Tủ sách điện tử tương tác chia sẻ thói quen sống khỏe kiểu Nhật dễ làm ngay tại nhà dành cho gia đình và người lớn tuổi Việt Nam."
+    "description": "Tủ sách điện tử tương tác chia sẻ thói quen sống khỏe và phòng ngừa đột quỵ kiểu Nhật dễ làm ngay tại nhà dành cho gia đình và người lớn tuổi Việt Nam."
   },
   "categories": [
-    { "id": "all", "label": "Tất cả cẩm nang" },
-    { "id": "published", "label": "Đang phát hành" },
+    { "id": "all", "label": "Tất cả cẩm nang (4)" },
+    { "id": "published", "label": "Đang mở đọc (2)" },
     { "id": "thoi-quen", "label": "Dinh dưỡng & Thói quen" },
+    { "id": "tim-mach", "label": "Đột quỵ & Huyết áp" },
     { "id": "van-dong", "label": "Xương khớp & Vận động" },
-    { "id": "tim-mach", "label": "Tim mạch & Huyết áp" },
     { "id": "tinh-than", "label": "Giấc ngủ & Tinh thần" }
   ],
   "books": [
@@ -33,6 +33,8 @@
       "storageProgressKey": "sk-nhat-mau-v1",
       "storageLastPageKey": "sk-nhat-last-page-v1",
       "totalCheckItems": 83,
+      "defaultPracticeHash": "lam-thu-1",
+      "defaultPracticeLabel": "Bảng 7 ngày",
       "tags": ["Ăn no 8 phần", "Giảm mặn Nagano", "Cá xanh & Natto", "Thể dục 3 phút", "Ikigai", "Đóng dấu 7 ngày"],
       "highlights": [
         "Sách lật 3D 62 trang như sổ tay giấy thật, chữ rõ dễ đọc cho ông bà",
@@ -47,8 +49,9 @@
           "jp": "腹八分目",
           "romaji": "Hara hachi bu",
           "tomTat": "Rời bàn ăn khi bụng vừa êm — nhẹ bụng tối nay, khỏe người mai sau.",
-          "hash": "c1",
+          "hash": "thoi-quen-1",
           "practiceHash": "lam-thu-1",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg",
           "status": "published"
         },
@@ -59,8 +62,9 @@
           "jp": "減塩",
           "romaji": "Gen'en · Tỉnh Nagano",
           "tomTat": "Mẹo nấu bát canh rau đầy và chấm gắp giúp giảm muối mà cơm vẫn đậm đà.",
-          "hash": "c2",
+          "hash": "thoi-quen-2",
           "practiceHash": "lam-thu-2",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c2-mo-chuong.jpg",
           "status": "published"
         },
@@ -71,8 +75,9 @@
           "jp": "一汁三菜",
           "romaji": "Ichijū sansai",
           "tomTat": "Một canh ba món nhỏ giúp ăn đủ rau, đạm, cá mà không lo quá no.",
-          "hash": "c3",
+          "hash": "thoi-quen-3",
           "practiceHash": "lam-thu-3",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c3-mo-chuong.jpg",
           "status": "published"
         },
@@ -83,8 +88,9 @@
           "jp": "海藻と青魚",
           "romaji": "Kaisō to aozakana",
           "tomTat": "Bổ sung chất xơ hòa tan và EPA/DHA tự nhiên từ cá nục, cá thu, rong biển.",
-          "hash": "c4",
+          "hash": "thoi-quen-4",
           "practiceHash": "lam-thu-4",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c4-mo-chuong.jpg",
           "status": "published"
         },
@@ -95,8 +101,9 @@
           "jp": "納豆",
           "romaji": "Nattō · Món sợi kéo dài",
           "tomTat": "Enzyme Nattokinase và Vitamin K2 bảo vệ mạch máu và xương khớp tuổi già.",
-          "hash": "c5",
+          "hash": "thoi-quen-5",
           "practiceHash": "lam-thu-5",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
           "status": "published"
         },
@@ -107,8 +114,9 @@
           "jp": "ラジオ体操",
           "romaji": "Rajio taisō",
           "tomTat": "13 động tác đánh thức khớp vai, lưng và nhịp thở theo đài phát thanh Nhật.",
-          "hash": "c6",
+          "hash": "thoi-quen-6",
           "practiceHash": "lam-thu-6",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
           "status": "published"
         },
@@ -119,9 +127,10 @@
           "jp": "インターバル速歩",
           "romaji": "Intābaru sokuho · Đại học Shinshu",
           "tomTat": "3 phút đi chậm xen 3 phút đi rảo bước giúp khỏe cơ đùi và giảm huyết áp.",
-          "hash": "c7",
+          "hash": "thoi-quen-7",
           "practiceHash": "lam-thu-7",
-          "img": "song-khoe-kieu-nhat/anh/c7-mo-chuong.jpg",
+          "practiceLabel": "Đóng dấu 7 ngày",
+          "img": "song-khoe-kieu-nhat/anh/c7-dibo-mo.jpg",
           "status": "published"
         },
         {
@@ -131,8 +140,9 @@
           "jp": "生きがい",
           "romaji": "Ikigai · Niềm vui sống",
           "tomTat": "Chăm chậu cây, dạy cháu học hay trò chuyện cùng hội bạn già giúp sống vui khỏe.",
-          "hash": "c8",
+          "hash": "thoi-quen-8",
           "practiceHash": "lam-thu-8",
+          "practiceLabel": "Đóng dấu 7 ngày",
           "img": "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
           "status": "published",
           "moi": true
@@ -176,8 +186,144 @@
       ]
     },
     {
-      "id": "xuong-khop-deo-dai",
+      "id": "ngua-dot-quy",
       "number": "Cẩm nang Số 2",
+      "kanji": "予防",
+      "title": "Đột quỵ: Người Nhật đã làm gì?",
+      "subtitle": "Đột quỵ từng là nguyên nhân tử vong số 1 ở Nhật. Người Nhật đã đẩy lùi nó bằng những việc nhà mình cũng làm được",
+      "category": "tim-mach",
+      "status": "published",
+      "statusLabel": "Đang mở đọc · Chương 1–6",
+      "badge": "MỚI · Sổ huyết áp & Bắt mạch",
+      "pagesCount": 40,
+      "episodesPublished": 6,
+      "episodesTotal": 9,
+      "path": "ngua-dot-quy/",
+      "coverImage": "ngua-dot-quy/anh/daruma-quyet-tam.webp",
+      "bannerImage": "ngua-dot-quy/anh/c1-mo-chuong.jpg",
+      "storageProgressKey": "dq-mau-v1",
+      "storageLastPageKey": "dq-nhat-last-page-v1",
+      "totalCheckItems": 33,
+      "defaultPracticeHash": "so-huyet-ap",
+      "defaultPracticeLabel": "Sổ huyết áp 7 sáng",
+      "tags": ["Nhận biết BE FAST", "Huyết áp Hisayama", "Phòng Heat Shock", "Muối nhẹ Karushio", "Bắt mạch 15 giây", "Thẻ gọi 115"],
+      "highlights": [
+        "Sách lật 40 trang: 3 phép thử Mặt – Tay – Lời nhận diện đột quỵ trong 1 phút",
+        "Tích hợp Sổ đo huyết áp 7 buổi sáng tự tính trung bình & Thẻ gọi cấp cứu 115",
+        "Đồng hồ đếm ngược 15 giây tự bắt mạch phát hiện sớm rung nhĩ & bộ đổi nhãn muối"
+      ],
+      "episodes": [
+        {
+          "so": 1,
+          "nhom": "Hiểu đúng & Nguy cơ",
+          "ten": "Đột quỵ là gì, nhà mình có nguy cơ không?",
+          "jp": "脳",
+          "romaji": "Nōsotchū to wa",
+          "tomTat": "Phân biệt tắc mạch và vỡ mạch, tự kiểm tra 9 yếu tố nguy cơ của bố mẹ.",
+          "hash": "c1-mo",
+          "practiceHash": "c1-lam-thu",
+          "practiceLabel": "Đếm yếu tố nguy cơ",
+          "img": "ngua-dot-quy/anh/c1-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 2,
+          "nhom": "Cấp cứu giờ vàng",
+          "ten": "Nhận ra đột quỵ trong 1 phút, gọi 115 kịp lúc",
+          "jp": "脳卒中",
+          "romaji": "ACT FAST · BE FAST",
+          "tomTat": "Ba phép thử Mặt – Tay – Lời, những mẹo dân gian tuyệt đối tránh và Thẻ gọi 115.",
+          "hash": "c2-mo",
+          "practiceHash": "c2-lam-thu",
+          "practiceLabel": "Thẻ gọi 115",
+          "img": "ngua-dot-quy/anh/c2-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 3,
+          "nhom": "Huyết áp buổi sáng",
+          "ten": "Đo huyết áp buổi sáng, bài học từ Hisayama",
+          "jp": "血圧",
+          "romaji": "Katei ketsuatsu · Thị trấn Hisayama",
+          "tomTat": "Vì sao ngưỡng đo ở nhà là 135/85 và sổ theo dõi huyết áp 7 buổi sáng liền.",
+          "hash": "c3-mo",
+          "practiceHash": "so-huyet-ap",
+          "practiceLabel": "Sổ huyết áp 7 sáng",
+          "img": "ngua-dot-quy/anh/c3-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 4,
+          "nhom": "An toàn mùa lạnh",
+          "ten": "Tắm mùa đông sao cho an toàn với bố mẹ",
+          "jp": "入浴",
+          "romaji": "Nyūyoku · Phòng Heat Shock",
+          "tomTat": "Tránh cú sốc nhiệt khi bước vào phòng tắm lạnh và 4 nguyên tắc tắm ấm dưới 41°C.",
+          "hash": "c4-mo",
+          "practiceHash": "c4-lam-thu",
+          "practiceLabel": "Đóng dấu 7 tối",
+          "img": "ngua-dot-quy/anh/c4-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 5,
+          "nhom": "Dinh dưỡng mạch máu",
+          "ten": "Ăn nhạt mà vẫn ngon kiểu Nhật (Karushio)",
+          "jp": "減塩",
+          "romaji": "Karushio · Vị Umami",
+          "tomTat": "Bí quyết nấu nước dùng đậm vị umami của Viện Tim mạch Osaka và công cụ đổi Natri ra muối.",
+          "hash": "c5-mo",
+          "practiceHash": "c5-lam-thu",
+          "practiceLabel": "Đổi Natri & 7 ngày",
+          "img": "ngua-dot-quy/anh/c5-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 6,
+          "nhom": "Nhịp tim & Rung nhĩ",
+          "ten": "Bắt mạch 15 giây, biết sớm tim đập loạn",
+          "jp": "脈",
+          "romaji": "Myaku no hi · Ngày bắt mạch 9/3",
+          "tomTat": "Đồng hồ đếm ngược 15 giây ngay trên trang sách giúp phát hiện sớm nhịp tim không đều.",
+          "hash": "c6-mo",
+          "practiceHash": "c6-lam-thu",
+          "practiceLabel": "Bấm giờ bắt mạch",
+          "img": "ngua-dot-quy/anh/c6-mo-chuong.jpg",
+          "status": "published",
+          "moi": true
+        },
+        {
+          "so": 7,
+          "nhom": "Vận động phòng bệnh",
+          "ten": "Đi bộ bao nhiêu là đủ để phòng đột quỵ?",
+          "jp": "歩行",
+          "romaji": "Hokō",
+          "tomTat": "Nhịp đi bộ vừa sức giúp giữ mạch máu mềm mại mà không làm tăng huyết áp đột ngột.",
+          "status": "upcoming"
+        },
+        {
+          "so": 8,
+          "nhom": "Tầm soát sớm",
+          "ten": "Đột quỵ thầm lặng: não tổn thương mà không biết",
+          "jp": "無症候",
+          "romaji": "Kakure nōkōsoku",
+          "tomTat": "Nhận diện những dấu hiệu nhỏ thoáng qua và tầm soát não định kỳ.",
+          "status": "upcoming"
+        },
+        {
+          "so": 9,
+          "nhom": "Tổng kết thực hành",
+          "ten": "10 điều người Nhật làm để phòng đột quỵ",
+          "jp": "十か条",
+          "romaji": "Nōsotchū yobō jūkajō",
+          "tomTat": "Bản tóm tắt 10 nguyên tắc vàng của Hiệp hội Đột quỵ Nhật Bản treo tại nhà.",
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "id": "xuong-khop-deo-dai",
+      "number": "Cẩm nang Số 3",
       "kanji": "筋骨",
       "title": "Gân cốt dẻo dai tuổi 50+",
       "subtitle": "Bài tập giữ thăng bằng, bảo vệ khớp gối và phòng té ngã kiểu người cao tuổi Nhật Bản",
@@ -189,32 +335,12 @@
       "episodesPublished": 0,
       "episodesTotal": 8,
       "coverImage": "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
+      "bannerImage": "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
       "tags": ["Khớp gối", "Thăng bằng", "Phòng té ngã", "Tập tại nhà"],
       "highlights": [
         "Đứng một chân mở mắt 1 phút mỗi sáng (bài tập Flamingo tăng mật độ xương)",
         "Tư thế đứng dậy, ngồi xuống và lên cầu thang không làm mòn sụn khớp gối",
         "Thực đơn bổ sung Canxi, Vitamin D và đạm dễ tiêu cho người lớn tuổi"
-      ]
-    },
-    {
-      "id": "mach-mau-huyet-ap",
-      "number": "Cẩm nang Số 3",
-      "kanji": "血管",
-      "title": "Chăm sóc Mạch máu & Huyết áp 4 mùa",
-      "subtitle": "Phòng sốc nhiệt mùa lạnh, giữ mạch máu mềm mại và theo dõi huyết áp tại nhà đúng chuẩn",
-      "category": "tim-mach",
-      "status": "upcoming",
-      "statusLabel": "Sắp ra mắt · 8 tập",
-      "badge": "Đang biên soạn",
-      "pagesCount": 52,
-      "episodesPublished": 0,
-      "episodesTotal": 8,
-      "coverImage": "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
-      "tags": ["Huyết áp", "Mạch máu", "Phòng sốc nhiệt", "Đo huyết áp"],
-      "highlights": [
-        "Quy tắc làm ấm phòng tắm và nhà vệ sinh tránh sốc nhiệt (Heat shock) mùa đông",
-        "Khung giờ vàng đo và ghi sổ huyết áp sáng – tối để bác sĩ dễ theo dõi",
-        "Kết hợp Natto, cá biển xanh và giảm muối giúp thành mạch bền vững"
       ]
     },
     {
@@ -231,6 +357,7 @@
       "episodesPublished": 0,
       "episodesTotal": 6,
       "coverImage": "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
+      "bannerImage": "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
       "tags": ["Ngủ sâu", "Ngâm chân ấm", "Giảm trằn trọc", "Tinh thần an vui"],
       "highlights": [
         "Nghi thức tắm nắng sớm 15 phút giúp cơ thể tự tiết Melatonin vào buổi tối",
