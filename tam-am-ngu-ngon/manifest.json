@@ -1,0 +1,17 @@
+{
+  "name": "Cẩm nang Số 7: Tắm Ấm & Ngâm Chân Kiểu Nhật — Genki Cẩm Nang",
+  "short_name": "Tắm Ấm & Ngâm Chân",
+  "description": "Cẩm nang 40 trang hướng dẫn tắm ấm Ofuro 40°C và ngâm chân Ashiyu giúp giãn mạch, ấm cơ thể, phòng sốc nhiệt và ngủ sâu kiểu Nhật.",
+  "start_url": "./#bia",
+  "display": "standalone",
+  "background_color": "#1E2A38",
+  "theme_color": "#B8352B",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "anh/daruma-vui.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

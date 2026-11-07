@@ -1,0 +1,17 @@
+{
+  "name": "Cẩm nang Số 9: Moai — Sống Vui Có Bạn, Não Trẻ Lâu — Genki Cẩm Nang",
+  "short_name": "Moai Kết Nối",
+  "description": "Cẩm nang 40 trang khám phá bí quyết hội bạn già Moai từ đảo Okinawa giúp người lớn tuổi gắn kết mỗi ngày, đẩy lùi cô đơn và giữ trí não minh mẫn.",
+  "start_url": "./#bia",
+  "display": "standalone",
+  "background_color": "#1E2A38",
+  "theme_color": "#B8352B",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "anh/daruma-vui.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
