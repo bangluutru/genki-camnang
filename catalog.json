@@ -1,0 +1,242 @@
+{
+  "site": {
+    "name": "Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật",
+    "shortName": "Genki Cẩm Nang",
+    "publisher": "HSC · Genki Fami",
+    "description": "Tủ sách điện tử tương tác chia sẻ thói quen sống khỏe kiểu Nhật dễ làm ngay tại nhà dành cho gia đình và người lớn tuổi Việt Nam."
+  },
+  "categories": [
+    { "id": "all", "label": "Tất cả cẩm nang" },
+    { "id": "published", "label": "Đang phát hành" },
+    { "id": "thoi-quen", "label": "Dinh dưỡng & Thói quen" },
+    { "id": "van-dong", "label": "Xương khớp & Vận động" },
+    { "id": "tim-mach", "label": "Tim mạch & Huyết áp" },
+    { "id": "tinh-than", "label": "Giấc ngủ & Tinh thần" }
+  ],
+  "books": [
+    {
+      "id": "song-khoe-kieu-nhat",
+      "number": "Cẩm nang Số 1",
+      "kanji": "健康",
+      "title": "Sống khỏe kiểu Nhật",
+      "subtitle": "12 thói quen nhỏ của người Nhật, nhà mình làm được ngay từ bữa tối nay",
+      "category": "thoi-quen",
+      "status": "published",
+      "statusLabel": "Đang mở đọc · Tập 1–8",
+      "badge": "MỚI · Tập 8: Ikigai",
+      "pagesCount": 62,
+      "episodesPublished": 8,
+      "episodesTotal": 12,
+      "path": "song-khoe-kieu-nhat/",
+      "coverImage": "song-khoe-kieu-nhat/anh/daruma-vui.webp",
+      "bannerImage": "song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg",
+      "storageProgressKey": "sk-nhat-mau-v1",
+      "storageLastPageKey": "sk-nhat-last-page-v1",
+      "totalCheckItems": 83,
+      "tags": ["Ăn no 8 phần", "Giảm mặn Nagano", "Cá xanh & Natto", "Thể dục 3 phút", "Ikigai", "Đóng dấu 7 ngày"],
+      "highlights": [
+        "Sách lật 3D 62 trang như sổ tay giấy thật, chữ rõ dễ đọc cho ông bà",
+        "8 tập đã phát hành đầy đủ truyện tranh minh họa, giải thích khoa học và thực đơn",
+        "Tích hợp bảng đánh dấu việc làm ngay từ bữa tối nay và con dấu đỏ 7 ngày (済)"
+      ],
+      "episodes": [
+        {
+          "so": 1,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Ăn no tám phần",
+          "jp": "腹八分目",
+          "romaji": "Hara hachi bu",
+          "tomTat": "Rời bàn ăn khi bụng vừa êm — nhẹ bụng tối nay, khỏe người mai sau.",
+          "hash": "c1",
+          "practiceHash": "lam-thu-1",
+          "img": "song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 2,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Bớt mặn kiểu Nagano",
+          "jp": "減塩",
+          "romaji": "Gen'en · Tỉnh Nagano",
+          "tomTat": "Mẹo nấu bát canh rau đầy và chấm gắp giúp giảm muối mà cơm vẫn đậm đà.",
+          "hash": "c2",
+          "practiceHash": "lam-thu-2",
+          "img": "song-khoe-kieu-nhat/anh/c2-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 3,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Bữa cơm nhiều đĩa nhỏ",
+          "jp": "一汁三菜",
+          "romaji": "Ichijū sansai",
+          "tomTat": "Một canh ba món nhỏ giúp ăn đủ rau, đạm, cá mà không lo quá no.",
+          "hash": "c3",
+          "practiceHash": "lam-thu-3",
+          "img": "song-khoe-kieu-nhat/anh/c3-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 4,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Rau, rong biển và cá nhỏ",
+          "jp": "海藻と青魚",
+          "romaji": "Kaisō to aozakana",
+          "tomTat": "Bổ sung chất xơ hòa tan và EPA/DHA tự nhiên từ cá nục, cá thu, rong biển.",
+          "hash": "c4",
+          "practiceHash": "lam-thu-4",
+          "img": "song-khoe-kieu-nhat/anh/c4-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 5,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Đậu nành lên men (Natto)",
+          "jp": "納豆",
+          "romaji": "Nattō · Món sợi kéo dài",
+          "tomTat": "Enzyme Nattokinase và Vitamin K2 bảo vệ mạch máu và xương khớp tuổi già.",
+          "hash": "c5",
+          "practiceHash": "lam-thu-5",
+          "img": "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 6,
+          "nhom": "Vận động & Nghỉ ngơi",
+          "ten": "Thể dục buổi sáng 3 phút",
+          "jp": "ラジオ体操",
+          "romaji": "Rajio taisō",
+          "tomTat": "13 động tác đánh thức khớp vai, lưng và nhịp thở theo đài phát thanh Nhật.",
+          "hash": "c6",
+          "practiceHash": "lam-thu-6",
+          "img": "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 7,
+          "nhom": "Vận động & Nghỉ ngơi",
+          "ten": "Đi bộ xen nhanh – chậm",
+          "jp": "インターバル速歩",
+          "romaji": "Intābaru sokuho · Đại học Shinshu",
+          "tomTat": "3 phút đi chậm xen 3 phút đi rảo bước giúp khỏe cơ đùi và giảm huyết áp.",
+          "hash": "c7",
+          "practiceHash": "lam-thu-7",
+          "img": "song-khoe-kieu-nhat/anh/c7-mo-chuong.jpg",
+          "status": "published"
+        },
+        {
+          "so": 8,
+          "nhom": "Tinh thần & Gắn kết",
+          "ten": "Ikigai: có việc để mong mỗi sáng",
+          "jp": "生きがい",
+          "romaji": "Ikigai · Niềm vui sống",
+          "tomTat": "Chăm chậu cây, dạy cháu học hay trò chuyện cùng hội bạn già giúp sống vui khỏe.",
+          "hash": "c8",
+          "practiceHash": "lam-thu-8",
+          "img": "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
+          "status": "published",
+          "moi": true
+        },
+        {
+          "so": 9,
+          "nhom": "Vận động & Nghỉ ngơi",
+          "ten": "Tắm ấm đúng cách trước giờ ngủ",
+          "jp": "入浴",
+          "romaji": "Nyūyoku",
+          "tomTat": "Làm ấm cơ thể an toàn, tránh sốc nhiệt và giúp dễ vào giấc ngủ sâu.",
+          "status": "upcoming"
+        },
+        {
+          "so": 10,
+          "nhom": "Ăn uống mỗi ngày",
+          "ten": "Uống trà xanh mỗi chiều",
+          "jp": "緑茶",
+          "romaji": "Ryokucha",
+          "tomTat": "Thưởng trà giàu Catechin đúng khung giờ không gây mất ngủ ban đêm.",
+          "status": "upcoming"
+        },
+        {
+          "so": 11,
+          "nhom": "Tinh thần & Gắn kết",
+          "ten": "Trò chuyện mỗi ngày (Moai)",
+          "jp": "模合",
+          "romaji": "Moai · Hội bạn già Okinawa",
+          "tomTat": "Gắn kết bạn bè, hàng xóm giúp tinh thần minh mẫn và giảm cô đơn.",
+          "status": "upcoming"
+        },
+        {
+          "so": 12,
+          "nhom": "Vận động & Nghỉ ngơi",
+          "ten": "Khám sức khỏe định kỳ Ningen Dock",
+          "jp": "人間ドック",
+          "romaji": "Ningen dokku",
+          "tomTat": "Lịch tầm soát định kỳ chủ động để bảo dưỡng cơ thể mỗi năm.",
+          "status": "upcoming"
+        }
+      ]
+    },
+    {
+      "id": "xuong-khop-deo-dai",
+      "number": "Cẩm nang Số 2",
+      "kanji": "筋骨",
+      "title": "Gân cốt dẻo dai tuổi 50+",
+      "subtitle": "Bài tập giữ thăng bằng, bảo vệ khớp gối và phòng té ngã kiểu người cao tuổi Nhật Bản",
+      "category": "van-dong",
+      "status": "upcoming",
+      "statusLabel": "Sắp ra mắt · 8 tập",
+      "badge": "Đang biên soạn",
+      "pagesCount": 48,
+      "episodesPublished": 0,
+      "episodesTotal": 8,
+      "coverImage": "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
+      "tags": ["Khớp gối", "Thăng bằng", "Phòng té ngã", "Tập tại nhà"],
+      "highlights": [
+        "Đứng một chân mở mắt 1 phút mỗi sáng (bài tập Flamingo tăng mật độ xương)",
+        "Tư thế đứng dậy, ngồi xuống và lên cầu thang không làm mòn sụn khớp gối",
+        "Thực đơn bổ sung Canxi, Vitamin D và đạm dễ tiêu cho người lớn tuổi"
+      ]
+    },
+    {
+      "id": "mach-mau-huyet-ap",
+      "number": "Cẩm nang Số 3",
+      "kanji": "血管",
+      "title": "Chăm sóc Mạch máu & Huyết áp 4 mùa",
+      "subtitle": "Phòng sốc nhiệt mùa lạnh, giữ mạch máu mềm mại và theo dõi huyết áp tại nhà đúng chuẩn",
+      "category": "tim-mach",
+      "status": "upcoming",
+      "statusLabel": "Sắp ra mắt · 8 tập",
+      "badge": "Đang biên soạn",
+      "pagesCount": 52,
+      "episodesPublished": 0,
+      "episodesTotal": 8,
+      "coverImage": "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
+      "tags": ["Huyết áp", "Mạch máu", "Phòng sốc nhiệt", "Đo huyết áp"],
+      "highlights": [
+        "Quy tắc làm ấm phòng tắm và nhà vệ sinh tránh sốc nhiệt (Heat shock) mùa đông",
+        "Khung giờ vàng đo và ghi sổ huyết áp sáng – tối để bác sĩ dễ theo dõi",
+        "Kết hợp Natto, cá biển xanh và giảm muối giúp thành mạch bền vững"
+      ]
+    },
+    {
+      "id": "an-ngon-ngu-sau",
+      "number": "Cẩm nang Số 4",
+      "kanji": "安眠",
+      "title": "Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật",
+      "subtitle": "Mẹo ngâm chân ấm, thở bụng nhẹ nhàng và nhịp sinh học giúp cô chú ngủ tròn giấc",
+      "category": "tinh-than",
+      "status": "upcoming",
+      "statusLabel": "Sắp ra mắt · 6 tập",
+      "badge": "Đang biên soạn",
+      "pagesCount": 44,
+      "episodesPublished": 0,
+      "episodesTotal": 6,
+      "coverImage": "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
+      "tags": ["Ngủ sâu", "Ngâm chân ấm", "Giảm trằn trọc", "Tinh thần an vui"],
+      "highlights": [
+        "Nghi thức tắm nắng sớm 15 phút giúp cơ thể tự tiết Melatonin vào buổi tối",
+        "Ngâm chân nước ấm 40°C trước khi ngủ 45 phút giúp ấm bàn chân, dễ ngủ",
+        "Cách xử lý khi thức giấc lúc 2–3 giờ sáng để không mệt mỏi vào hôm sau"
+      ]
+    }
+  ]
+}

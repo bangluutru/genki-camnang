@@ -1,0 +1,19 @@
+{
+  "name": "Sống khỏe kiểu Nhật — 12 thói quen nhỏ cho cả nhà",
+  "short_name": "Sống khỏe kiểu Nhật",
+  "description": "12 thói quen nhỏ của người Nhật, nhà mình làm được ngay từ bữa tối nay.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#22365A",
+  "theme_color": "#22365A",
+  "lang": "vi",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "anh/daruma-vui.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}

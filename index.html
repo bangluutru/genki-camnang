@@ -1,0 +1,1958 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật cho cả nhà</title>
+<meta name="description" content="Tủ sách cẩm nang điện tử tương tác chia sẻ thói quen sống khỏe kiểu Nhật dễ làm ngay tại nhà dành cho gia đình và người lớn tuổi Việt Nam.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật cho cả nhà">
+<meta property="og:description" content="Chọn và lật đọc các cẩm nang chăm sóc sức khỏe kiểu Nhật: Ăn no 8 phần, giảm mặn Nagano, Natto, Ikigai và bảng đóng dấu thực hành 7 ngày.">
+<meta property="og:image" content="song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#22365A">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/webp" href="song-khoe-kieu-nhat/anh/daruma-vui.webp">
+<link rel="apple-touch-icon" href="song-khoe-kieu-nhat/anh/daruma-vui.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Noto+Serif+JP:wght@700;900&display=swap">
+<style>
+:root{
+  --desk:#22365A;
+  --desk-2:#172642;
+  --paper:#FFFDF8;
+  --paper-2:#F7F1E6;
+  --paper-3:#EFE5D4;
+  --ink:#24201D;
+  --ink-soft:#5E5650;
+  --shu:#C3272F;
+  --shu-soft:#F6DEDB;
+  --jade:#1D6A64;
+  --jade-soft:#DDEDEA;
+  --line:#E6DCCB;
+  --f-display:"Baloo 2","Nunito",system-ui,sans-serif;
+  --f-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-jp:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+body.large-text{
+  font-size:18.5px;
+  line-height:1.62;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- Thanh đầu trang & Băng rôn Đại lý ---------- */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(255,253,248,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:1140px;
+  margin:0 auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  min-width:0;
+}
+.hanko-seal{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:2.2px solid var(--shu);
+  color:var(--shu);
+  font-family:var(--f-jp);
+  font-weight:900;
+  font-size:15px;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  transform:rotate(-7deg);
+  flex:none;
+  background:var(--paper);
+  writing-mode:vertical-rl;
+  letter-spacing:-1px;
+}
+.brand-text{min-width:0}
+.brand-kicker{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--shu);
+}
+.brand-title{
+  font-family:var(--f-display);
+  font-size:21px;
+  font-weight:800;
+  line-height:1.1;
+  color:var(--ink);
+  display:block;
+}
+.top-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.btn-pill{
+  all:unset;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  height:40px;
+  padding:0 15px;
+  border-radius:99px;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:14.5px;
+  white-space:nowrap;
+  transition:transform .12s ease,filter .12s ease;
+}
+.btn-pill svg{width:17px;height:17px;flex:none}
+.btn-pill:hover{filter:brightness(1.06)}
+.btn-pill:active{transform:scale(.98)}
+.btn-pill:focus-visible{outline:2px solid var(--desk);outline-offset:2px}
+.btn-outline{
+  background:var(--paper-2);
+  color:var(--ink);
+  border:1.5px solid var(--line);
+}
+.btn-jade{
+  background:var(--jade);
+  color:#fff;
+}
+.btn-shu{
+  background:var(--shu);
+  color:#fff;
+}
+
+/* Thanh thông tin nhà thuốc / người tặng */
+.agency-banner{
+  background:var(--jade-soft);
+  border-bottom:1px solid #C3DFDA;
+  padding:9px 20px;
+}
+.agency-banner-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:.92em;
+}
+.agency-badge-left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  min-width:0;
+}
+.agency-tag{
+  background:var(--jade);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:99px;
+}
+.agency-name{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.08em;
+  color:var(--jade);
+}
+.agency-banner-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.zalo-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--jade);
+  color:#fff;
+  text-decoration:none;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:13.5px;
+  padding:4px 12px;
+  border-radius:99px;
+}
+.link-edit-agency{
+  all:unset;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  color:var(--ink-soft);
+  text-decoration:underline;
+}
+
+/* ---------- Hero Tủ sách & Cẩm nang nổi bật ---------- */
+.hero{
+  background:radial-gradient(110% 90% at 50% 0%, var(--desk) 0%, var(--desk-2) 100%);
+  color:#FFFDF8;
+  padding:36px 20px 44px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:14px;
+  background:repeating-linear-gradient(90deg, rgba(255,253,248,.08) 0 18px, transparent 18px 36px);
+}
+.hero-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.25fr .85fr;
+  gap:36px;
+  align-items:center;
+}
+.hero-copy{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  min-width:0;
+}
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  align-self:flex-start;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:99px;
+  padding:5px 14px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  color:#F6E7C8;
+}
+.hero h1{
+  font-family:var(--f-display);
+  font-size:clamp(2rem, 4.2vw, 3.1rem);
+  font-weight:800;
+  line-height:1.08;
+  margin:0;
+  color:#FFFDF8;
+  text-wrap:balance;
+}
+.hero h1 span{
+  color:#FF8B85;
+}
+.hero-desc{
+  margin:0;
+  font-size:1.06em;
+  color:#DCE4F2;
+  max-width:56ch;
+}
+.hero-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:2px;
+}
+.stat-chip{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;
+  padding:9px 14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.stat-chip b{
+  font-family:var(--f-display);
+  font-size:1.35em;
+  line-height:1;
+  color:#FFE28A;
+}
+.stat-chip span{
+  font-size:.86em;
+  color:#E5ECF8;
+  line-height:1.25;
+}
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:6px;
+}
+.btn-hero-main{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background:var(--shu);
+  color:#fff;
+  text-decoration:none;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.12em;
+  padding:13px 24px;
+  border-radius:99px;
+  box-shadow:0 8px 22px rgba(195,39,47,.38);
+  transition:transform .14s ease,filter .14s ease;
+}
+.btn-hero-main:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-hero-main svg{width:20px;height:20px;flex:none}
+.btn-hero-sub{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:rgba(255,255,255,.13);
+  border:1.5px solid rgba(255,255,255,.28);
+  color:#FFFDF8;
+  text-decoration:none;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.02em;
+  padding:12px 20px;
+  border-radius:99px;
+  cursor:pointer;
+}
+.btn-hero-sub:hover{background:rgba(255,255,255,.22)}
+
+/* Mô hình cuốn sách 3D trên bàn chàm */
+.hero-book-stage{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.mini-book-link{
+  text-decoration:none;
+  color:var(--ink);
+  display:block;
+  width:min(100%, 300px);
+  transition:transform .22s cubic-bezier(.2,.8,.2,1);
+}
+.mini-book-link:hover{
+  transform:translateY(-5px) rotate(-1deg);
+}
+.mini-book{
+  position:relative;
+  background:var(--paper);
+  border-radius:6px 18px 18px 6px;
+  padding:22px 20px 18px;
+  box-shadow:
+    inset 12px 0 18px -14px rgba(60,40,20,.45),
+    10px 14px 32px rgba(8,15,28,.55);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  overflow:hidden;
+}
+.mini-book-top{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.mini-book-kicker{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--shu);
+}
+.mini-book-title{
+  font-family:var(--f-display);
+  font-size:32px;
+  font-weight:800;
+  line-height:.98;
+  margin:0;
+  color:var(--ink);
+}
+.mini-book-title span{color:var(--shu)}
+.mini-book-sub{
+  margin:0;
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.35;
+}
+.mini-book-art{
+  position:relative;
+  height:175px;
+  display:grid;
+  place-items:center;
+  margin:4px 0;
+}
+.mini-sun{
+  position:absolute;
+  width:154px;
+  height:154px;
+  border-radius:50%;
+  background:var(--shu);
+}
+.mini-daruma{
+  position:relative;
+  width:132px;
+  height:auto;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.22));
+}
+.mini-gift{
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:9px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.mini-gift-info{min-width:0;flex:1}
+.mini-gift small{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.mini-gift strong{
+  display:block;
+  font-family:var(--f-display);
+  font-size:14px;
+  color:var(--jade);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.mini-open-lbl{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:13px;
+  color:var(--shu);
+  white-space:nowrap;
+}
+
+/* ---------- Khung chính Tủ sách ---------- */
+.main-wrap{
+  max-width:1140px;
+  margin:0 auto;
+  padding:36px 20px 64px;
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+}
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.sec-kicker{
+  display:block;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--shu);
+  margin-bottom:4px;
+}
+.sec-title{
+  font-family:var(--f-display);
+  font-size:clamp(1.55rem, 2.8vw, 2.1rem);
+  font-weight:800;
+  line-height:1.15;
+  margin:0;
+}
+.sec-sub{
+  margin:4px 0 0;
+  color:var(--ink-soft);
+  font-size:.96em;
+}
+
+/* Thanh tìm kiếm & bộ lọc danh mục */
+.filter-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 14px;
+  margin-bottom:22px;
+}
+.cat-pills{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.cat-btn{
+  all:unset;
+  cursor:pointer;
+  font-family:var(--f-display);
+  font-weight:700;
+  font-size:.92em;
+  padding:7px 14px;
+  border-radius:99px;
+  color:var(--ink-soft);
+  background:transparent;
+  transition:background .12s ease,color .12s ease;
+}
+.cat-btn:hover{background:rgba(36,32,29,.06);color:var(--ink)}
+.cat-btn.active{
+  background:var(--desk);
+  color:#FFFDF8;
+}
+. search-box-placeholder{}
+.search-box{
+  position:relative;
+  flex:1 1 300px;
+}
+.search-box svg{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:17px;
+  height:17px;
+  color:var(--ink-soft);
+  pointer-events:none;
+}
+.search-box input{
+  width:100%;
+  height:42px;
+  padding:0 16px 0 40px;
+  border-radius:99px;
+  border:1.5px solid var(--line);
+  background:var(--paper);
+  font-family:var(--f-body);
+  font-size:.94em;
+  color:var(--ink);
+}
+.search-box input:focus{
+  outline:none;
+  border-color:var(--jade);
+}
+
+/* Lưới Thẻ Cẩm nang (2x2 cân đối, không có thẻ mồ côi) */
+.books-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:24px;
+}
+.book-card{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.book-card.is-published{
+  border-color:var(--jade);
+  box-shadow:0 10px 28px rgba(29,106,100,.1);
+}
+.book-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(36,32,29,.09);
+}
+.book-card-banner{
+  position:relative;
+  height:176px;
+  background:var(--paper-2);
+  overflow:hidden;
+}
+.book-card-banner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 35%;
+}
+.book-card.is-upcoming .book-card-banner img{
+  filter:saturate(.72) contrast(.95);
+}
+.book-card-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(23,38,66,.55) 0%, rgba(23,38,66,.08) 48%, rgba(23,38,66,.7) 100%);
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.card-top-badges{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.badge-num{
+  background:rgba(255,253,248,.94);
+  color:var(--ink);
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:12.5px;
+  padding:3px 11px;
+  border-radius:99px;
+}
+.badge-status{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:12px;
+  padding:3px 11px;
+  border-radius:99px;
+}
+.badge-status.published{
+  background:var(--shu);
+  color:#fff;
+}
+.badge-status.upcoming{
+  background:rgba(255,253,248,.9);
+  color:var(--ink-soft);
+}
+.card-kanji-row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  color:#FFFDF8;
+}
+.card-kanji{
+  font-family:var(--f-jp);
+  font-weight:900;
+  font-size:26px;
+  line-height:1;
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.card-meta-pill{
+  font-size:12px;
+  font-weight:800;
+  background:rgba(0,0,0,.45);
+  padding:3px 10px;
+  border-radius:99px;
+}
+
+.book-card-body{
+  padding:18px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  flex:1;
+}
+.book-card-title{
+  font-family:var(--f-display);
+  font-size:1.42em;
+  font-weight:800;
+  line-height:1.15;
+  margin:0;
+}
+.book-card-sub{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:.94em;
+}
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.tag-chip{
+  font-size:12px;
+  font-weight:700;
+  background:var(--paper-2);
+  color:var(--ink-soft);
+  padding:3px 10px;
+  border-radius:99px;
+}
+.highlight-list{
+  margin:2px 0 0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:.9em;
+}
+.highlight-list li{
+  display:grid;
+  grid-template-columns:16px 1fr;
+  gap:7px;
+  align-items: baseline;
+}
+.highlight-list li::before{
+  content:"✓";
+  color:var(--jade);
+  font-weight:800;
+}
+.book-progress-box{
+  background:var(--jade-soft);
+  border-radius:12px;
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  font-size:.88em;
+}
+.book-progress-box strong{
+  color:var(--jade);
+  font-family:var(--f-display);
+  font-size:1.05em;
+}
+.book-card-footer{
+  margin-top:auto;
+  padding-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.btn-card-primary{
+  flex:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  background:var(--shu);
+  color:#fff;
+  text-decoration:none;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1em;
+  padding:10px 16px;
+  border-radius:12px;
+  text-align:center;
+}
+.btn-card-primary:hover{filter:brightness(1.07)}
+.btn-card-secondary{
+  all:unset;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  background:var(--paper-2);
+  border:1.5px solid var(--line);
+  color:var(--ink);
+  text-decoration:none;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.94em;
+  padding:9px 14px;
+  border-radius:12px;
+}
+.btn-card-secondary:hover{background:var(--paper-3)}
+
+/* ---------- Mục lục 12 Thói quen trong Cẩm nang Số 1 ---------- */
+.episodes-section{
+  background:var(--paper-2);
+  border:1.5px solid var(--line);
+  border-radius:22px;
+  padding:28px 24px;
+}
+.episodes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(250px, 1fr));
+  gap:16px;
+}
+.ep-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:transform .14s ease,border-color .14s ease;
+}
+.ep-card.published:hover{
+  transform:translateY(-2px);
+  border-color:var(--jade);
+}
+.ep-card.upcoming{
+  opacity:.74;
+  background:#FAF6EE;
+}
+.ep-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.ep-num{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.92em;
+  color:var(--shu);
+}
+.ep-num b{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--shu-soft);
+  color:var(--shu);
+  display:inline-grid;
+  place-items:center;
+  font-size:.92em;
+}
+.ep-kanji{
+  font-family:var(--f-jp);
+  font-weight:900;
+  font-size:.95em;
+  color:var(--jade);
+}
+.ep-title{
+  font-family:var(--f-display);
+  font-size:1.18em;
+  font-weight:800;
+  line-height:1.2;
+  margin:0;
+}
+.ep-desc{
+  margin:0;
+  font-size:.88em;
+  color:var(--ink-soft);
+  line-height:1.4;
+}
+.ep-actions{
+  margin-top:auto;
+  padding-top:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.ep-link-read{
+  flex:1;
+  text-decoration:none;
+  background:var(--jade);
+  color:#fff;
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.88em;
+  padding:7px 11px;
+  border-radius:9px;
+  text-align:center;
+}
+.ep-link-read:hover{filter:brightness(1.08)}
+.ep-link-check{
+  text-decoration:none;
+  background:var(--shu-soft);
+  color:var(--shu);
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:.85em;
+  padding:7px 10px;
+  border-radius:9px;
+  white-space:nowrap;
+}
+.ep-link-check:hover{filter:brightness(.96)}
+.ep-soon-tag{
+  font-size:.82em;
+  font-weight:700;
+  color:var(--ink-soft);
+  font-style:italic;
+}
+
+/* ---------- Khu vực hướng dẫn Đại lý / Nhà thuốc ---------- */
+.partner-card{
+  background:linear-gradient(135deg, #22365A 0%, #1D6A64 100%);
+  color:#FFFDF8;
+  border-radius:22px;
+  padding:28px 28px;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:24px;
+  align-items:center;
+}
+.partner-card h3{
+  font-family:var(--f-display);
+  font-size:1.65em;
+  font-weight:800;
+  margin:0 0 8px;
+  color:#FFFDF8;
+}
+.partner-card p{
+  margin:0 0 14px;
+  color:#E2ECF5;
+  font-size:.96em;
+}
+.partner-steps{
+  margin:0;
+  padding-left:18px;
+  color:#F6E7C8;
+  font-size:.92em;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.partner-cta-box{
+  background:rgba(255,253,248,.12);
+  border:1px solid rgba(255,253,248,.22);
+  border-radius:16px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:stretch;
+  text-align:center;
+}
+
+/* ---------- Chân trang ---------- */
+.footer{
+  border-top:1px solid var(--line);
+  background:var(--paper-2);
+  padding:28px 20px;
+  color:var(--ink-soft);
+  font-size:.88em;
+}
+.footer-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+/* ---------- Hộp thoại Chia sẻ & Tạo QR ---------- */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(15,26,46,.62);
+  display:grid;
+  place-items:center;
+  padding:16px;
+  z-index:80;
+}
+.modal-panel{
+  width:min(100%, 480px);
+  max-height:90dvh;
+  overflow-y:auto;
+  background:var(--paper);
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.modal-head h3{
+  font-family:var(--f-display);
+  font-size:1.4em;
+  font-weight:800;
+  margin:0;
+}
+.btn-close{
+  all:unset;
+  cursor:pointer;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--paper-2);
+  display:grid;
+  place-items:center;
+}
+.modal-sec{
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.modal-sec h4{
+  margin:0;
+  font-size:.78em;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--jade);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.seg-group{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  background:var(--paper);
+  padding:4px;
+  border-radius:10px;
+  border:1px solid var(--line);
+}
+.seg-opt{
+  all:unset;
+  cursor:pointer;
+  text-align:center;
+  padding:8px 8px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:800;
+  color:var(--ink-soft);
+}
+.seg-opt.active{
+  background:var(--shu);
+  color:#fff;
+}
+.field-lbl{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:13px;
+  font-weight:700;
+}
+.field-lbl input{
+  height:40px;
+  padding:0 12px;
+  border-radius:9px;
+  border:1.5px solid var(--line);
+  background:var(--paper);
+  font-family:var(--f-body);
+  font-size:14.5px;
+  color:var(--ink);
+}
+.field-lbl input:focus{
+  outline:none;
+  border-color:var(--jade);
+}
+.url-box{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px 10px;
+  word-break:break-all;
+  color:var(--ink-soft);
+}
+.qr-flex{
+  display:grid;
+  grid-template-columns:126px 1fr;
+  gap:14px;
+  align-items:center;
+}
+.qr-preview{
+  width:126px;
+  height:126px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:6px;
+  display:grid;
+  place-items:center;
+}
+.qr-preview svg{width:100%;height:100%;display:block}
+.toast{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#18263E;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:99px;
+  font-weight:700;
+  font-size:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  z-index:100;
+}
+
+@media (max-width: 820px){
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .books-grid{grid-template-columns:1fr}
+  .partner-card{grid-template-columns:1fr}
+}
+@media (max-width: 520px){
+  .topbar-inner{padding:10px 14px}
+  .brand-title{font-size:18px}
+  .hero{padding:26px 16px 34px}
+  .main-wrap{padding:28px 16px 48px}
+  .episodes-section{padding:20px 16px}
+  .qr-flex{grid-template-columns:1fr;justify-items:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="./">
+      <span class="hanko-seal" aria-hidden="true">健康</span>
+      <span class="brand-text">
+        <span class="brand-kicker">Tủ sách sức khỏe gia đình · Genki Fami</span>
+        <span class="brand-title">Genki Cẩm Nang</span>
+      </span>
+    </a>
+    <div class="top-actions">
+      <button type="button" class="btn-pill btn-outline" id="btn-font-toggle" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h16v3M9 20h6M12 4v16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="font-toggle-lbl">Chữ: Chuẩn</span>
+      </button>
+      <button type="button" class="btn-pill btn-jade" id="btn-open-share">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7M16 6l-4-4-4 4M12 2v13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Chia sẻ &amp; Mã QR</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="agency-banner" id="agency-banner" hidden>
+  <div class="agency-banner-inner">
+    <div class="agency-badge-left">
+      <span class="agency-tag">Quà tặng sức khỏe từ</span>
+      <strong class="agency-name" id="banner-agency-name">HSC · Genki Fami</strong>
+    </div>
+    <div class="agency-banner-actions">
+      <a class="zalo-pill" id="banner-zalo-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+        <span>Nhắn Zalo tư vấn:</span>
+        <b id="banner-zalo-num"></b>
+      </a>
+      <button type="button" class="link-edit-agency" id="btn-banner-edit">Đổi thông tin người tặng</button>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span>🇯🇵 Tủ sách điện tử lật trang tương tác</span>
+      </div>
+      <h1>Cẩm nang <span>Sống khỏe kiểu Nhật</span> dễ làm ngay từ bữa tối nay</h1>
+      <p class="hero-desc">
+        Mỗi cuốn cẩm nang được thiết kế như một cuốn sổ tay giấy ấm áp: chữ to rõ cho ông bà, có tranh minh họa vui vẻ, căn cứ khoa học Nhật Bản và <b>bảng đóng dấu đỏ 7 ngày (済)</b> ngay trên điện thoại.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-chip">
+          <b>62</b>
+          <span>Trang sách lật 3D<br>Cẩm nang Số 1</span>
+        </div>
+        <div class="stat-chip">
+          <b id="stat-checked-count">0 / 83</b>
+          <span>Mục thực hành &amp; dấu 7 ngày<br>đã đánh dấu trên máy bạn</span>
+        </div>
+        <div class="stat-chip">
+          <b>4</b>
+          <span>Chuyên đề cẩm nang<br>trong tủ sách Genki</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn-hero-main js-book1-link" id="hero-read-btn" href="song-khoe-kieu-nhat/#bia">
+          <span>Đọc ngay Cẩm nang Số 1</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-hero-sub" id="hero-continue-btn" href="song-khoe-kieu-nhat/#lam-thu-1" hidden>
+          <span id="hero-continue-lbl">Đọc tiếp trang đang mở</span>
+        </a>
+        <button type="button" class="btn-hero-sub" id="hero-share-btn">
+          <span>Tạo link &amp; Thẻ QR gửi Zalo</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-book-stage">
+      <a class="mini-book-link js-book1-link" href="song-khoe-kieu-nhat/#bia" aria-label="Mở đọc Cẩm nang Số 1: Sống khỏe kiểu Nhật">
+        <div class="mini-book">
+          <div class="mini-book-top">
+            <span class="hanko-seal" style="width:28px;height:28px;font-size:11px">健康</span>
+            <span class="mini-book-kicker">Cẩm nang Số 1 · 62 trang</span>
+          </div>
+          <h2 class="mini-book-title">Sống khỏe<br><span>kiểu Nhật</span></h2>
+          <p class="mini-book-sub">12 thói quen nhỏ của người Nhật, nhà mình làm được ngay từ bữa tối nay</p>
+          <div class="mini-book-art">
+            <div class="mini-sun"></div>
+            <img class="mini-daruma" src="song-khoe-kieu-nhat/anh/daruma-vui.webp" alt="Búp bê Daruma xanh ngọc">
+          </div>
+          <div class="mini-gift">
+            <div class="mini-gift-info">
+              <small>Quà tặng từ</small>
+              <strong id="mini-cover-agency">HSC · Genki Fami</strong>
+            </div>
+            <span class="mini-open-lbl">Lật đọc ›</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main class="main-wrap">
+  <!-- Danh sách các bộ Cẩm nang -->
+  <section id="tu-sach">
+    <div class="sec-head">
+      <div>
+        <span class="sec-kicker">Tủ sách Chăm sóc Sức khỏe Chủ động</span>
+        <h2 class="sec-title">Chọn bộ Cẩm nang bạn muốn xem</h2>
+        <p class="sec-sub">Các bộ cẩm nang được biên soạn theo từng chuyên đề sức khỏe thiết thực cho người lớn tuổi và gia đình.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="cat-pills" id="cat-pills" role="tablist" aria-label="Lọc theo chủ đề cẩm nang"></div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <input type="search" id="search-input" placeholder="Tìm cẩm nang hoặc chủ đề (VD: giảm mặn, natto, khớp gối)...">
+      </div>
+    </div>
+
+    <div class="books-grid" id="books-grid"></div>
+  </section>
+
+  <!-- Chọn nhanh từng Tập trong Cẩm nang Số 1 -->
+  <section class="episodes-section" id="cac-tap-so-1">
+    <div class="sec-head">
+      <div>
+        <span class="sec-kicker">Cẩm nang Số 1 · Sống khỏe kiểu Nhật</span>
+        <h2 class="sec-title">Mở nhanh 12 Thói quen &amp; Bảng đóng dấu 7 ngày</h2>
+        <p class="sec-sub">Bấm vào từng tập để lật thẳng tới trang giải thích hoặc trang đánh dấu thực hành bữa tối.</p>
+      </div>
+      <a class="btn-pill btn-shu js-book1-link" href="song-khoe-kieu-nhat/#muc-luc" style="text-decoration:none">
+        <span>Xem Mục lục trong sách ›</span>
+      </a>
+    </div>
+
+    <div class="episodes-grid" id="episodes-grid"></div>
+  </section>
+
+  <!-- Khu vực dành cho Đại lý / Nhà thuốc chia sẻ -->
+  <section class="partner-card">
+    <div>
+      <h3>Dành cho Nhà thuốc, Phòng khám &amp; Người gửi tặng</h3>
+      <p>
+        Bạn có thể gắn <b>Tên Nhà thuốc / Đại lý</b> và <b>Số điện thoại Zalo tư vấn</b> vào toàn bộ tủ sách. Khi khách hàng hoặc người thân mở link hoặc quét mã QR, tên đơn vị của bạn sẽ hiển thị trang trọng ngay trên bìa trước, bìa sau và nút nhắn Zalo.
+      </p>
+      <ol class="partner-steps">
+        <li>Bấm nút <b>"Cá nhân hóa &amp; Tạo Thẻ QR"</b> bên cạnh.</li>
+        <li>Điền Tên Nhà thuốc / Người tặng và Số điện thoại Zalo.</li>
+        <li>Tải thẻ QR (PNG) để in đặt tại quầy hoặc sao chép link gửi qua Zalo.</li>
+      </ol>
+    </div>
+    <div class="partner-cta-box">
+      <strong style="font-family:var(--f-display);font-size:1.15em">Tạo Link &amp; Thẻ QR Đại lý miễn phí</strong>
+      <button type="button" class="btn-pill btn-shu" id="partner-open-share" style="width:100%;height:44px;font-size:15.5px">
+        <span>Cá nhân hóa &amp; Tạo Thẻ QR</span>
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <strong style="color:var(--ink);font-family:var(--f-display)">Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật</strong>
+      <p style="margin:4px 0 0">Cẩm nang chia sẻ kiến thức sống khỏe, không thay thế lời khuyên của bác sĩ. Biên soạn: HSC · Genki Fami.</p>
+    </div>
+    <div>
+      <a class="btn-pill btn-outline js-book1-link" href="song-khoe-kieu-nhat/#bia" style="text-decoration:none">Mở Cẩm nang Số 1 ›</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal Chia sẻ & Cá nhân hóa Đại lý -->
+<div class="modal-backdrop" id="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-modal-title" hidden>
+  <div class="modal-panel">
+    <div class="modal-head">
+      <h3 id="share-modal-title">Chia sẻ &amp; Tạo Thẻ QR</h3>
+      <button type="button" class="btn-close" id="btn-close-modal" aria-label="Đóng">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-sec">
+      <h4>1. Chọn nội dung người nhận sẽ mở ra</h4>
+      <div class="seg-group" role="group" aria-label="Chọn đích chia sẻ">
+        <button type="button" class="seg-opt active" id="seg-target-hub" data-target="hub">Toàn bộ Tủ sách Genki</button>
+        <button type="button" class="seg-opt" id="seg-target-book1" data-target="book1">Cẩm nang Số 1 (62 tr.)</button>
+      </div>
+    </div>
+
+    <div class="modal-sec">
+      <h4>
+        <span>2. Thông tin Nhà thuốc / Đại lý / Người tặng</span>
+        <button type="button" id="btn-reset-agency" style="all:unset;cursor:pointer;color:var(--shu);font-weight:800;font-size:12px">Đặt lại</button>
+      </h4>
+      <label class="field-lbl">
+        <span>Tên Đại lý hoặc Người tặng (hiện trên Tủ sách &amp; Bìa cẩm nang)</span>
+        <input type="text" id="inp-agency-name" maxlength="80" placeholder="VD: Nhà thuốc Minh Tâm / Cô Lan tặng">
+      </label>
+      <label class="field-lbl">
+        <span>Số điện thoại Zalo tư vấn (khách bấm mở thẳng Zalo)</span>
+        <input type="tel" id="inp-agency-zalo" maxlength="20" inputmode="tel" placeholder="VD: 0909123456">
+      </label>
+    </div>
+
+    <div class="modal-sec">
+      <h4>3. Sao chép Link hoặc Tải Thẻ QR</h4>
+      <div class="url-box" id="share-url-box"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="btn-pill btn-jade" id="btn-copy-share-url" style="flex:1">
+          <span>Sao chép link gửi Zalo</span>
+        </button>
+        <button type="button" class="btn-pill btn-outline" id="btn-native-share" hidden>
+          <span>Gửi…</span>
+        </button>
+      </div>
+      <div class="qr-flex">
+        <div class="qr-preview" id="qr-preview-box" aria-label="Mã QR"></div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <p style="margin:0;font-size:13px;color:var(--ink-soft)">Quét mã bằng camera hoặc Zalo để mở đọc ngay trên điện thoại.</p>
+          <button type="button" class="btn-pill btn-outline" id="btn-download-qr">
+            <span>Tải ảnh thẻ QR (PNG)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="qr.js"></script>
+<script>
+(function(){
+  const FALLBACK_CATALOG = {
+    categories: [
+      { id: "all", label: "Tất cả cẩm nang" },
+      { id: "published", label: "Đang phát hành" },
+      { id: "thoi-quen", label: "Dinh dưỡng & Thói quen" },
+      { id: "van-dong", label: "Xương khớp & Vận động" },
+      { id: "tim-mach", label: "Tim mạch & Huyết áp" },
+      { id: "tinh-than", label: "Giấc ngủ & Tinh thần" }
+    ],
+    books: [
+      {
+        id: "song-khoe-kieu-nhat",
+        number: "Cẩm nang Số 1",
+        kanji: "健康",
+        title: "Sống khỏe kiểu Nhật",
+        subtitle: "12 thói quen nhỏ của người Nhật, nhà mình làm được ngay từ bữa tối nay",
+        category: "thoi-quen",
+        status: "published",
+        statusLabel: "Đang mở đọc · Tập 1–8",
+        badge: "MỚI · Tập 8: Ikigai",
+        pagesCount: 62,
+        episodesPublished: 8,
+        episodesTotal: 12,
+        path: "song-khoe-kieu-nhat/",
+        coverImage: "song-khoe-kieu-nhat/anh/daruma-vui.webp",
+        bannerImage: "song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg",
+        storageProgressKey: "sk-nhat-mau-v1",
+        storageLastPageKey: "sk-nhat-last-page-v1",
+        totalCheckItems: 83,
+        tags: ["Ăn no 8 phần", "Giảm mặn Nagano", "Cá xanh & Natto", "Thể dục 3 phút", "Ikigai", "Đóng dấu 7 ngày"],
+        highlights: [
+          "Sách lật 3D 62 trang như sổ tay giấy thật, chữ rõ dễ đọc cho ông bà",
+          "8 tập đã phát hành đầy đủ truyện tranh minh họa, giải thích khoa học và thực đơn",
+          "Tích hợp bảng đánh dấu việc làm ngay từ bữa tối nay và con dấu đỏ 7 ngày (済)"
+        ],
+        episodes: [
+          { so: 1, nhom: "Ăn uống mỗi ngày", ten: "Ăn no tám phần", jp: "腹八分目", romaji: "Hara hachi bu", tomTat: "Rời bàn ăn khi bụng vừa êm — nhẹ bụng tối nay, khỏe người mai sau.", hash: "c1", practiceHash: "lam-thu-1", status: "published" },
+          { so: 2, nhom: "Ăn uống mỗi ngày", ten: "Bớt mặn kiểu Nagano", jp: "減塩", romaji: "Gen'en · Tỉnh Nagano", tomTat: "Mẹo nấu bát canh rau đầy và chấm gắp giúp giảm muối mà cơm vẫn đậm đà.", hash: "c2", practiceHash: "lam-thu-2", status: "published" },
+          { so: 3, nhom: "Ăn uống mỗi ngày", ten: "Bữa cơm nhiều đĩa nhỏ", jp: "一汁三菜", romaji: "Ichijū sansai", tomTat: "Một canh ba món nhỏ giúp ăn đủ rau, đạm, cá mà không lo quá no.", hash: "c3", practiceHash: "lam-thu-3", status: "published" },
+          { so: 4, nhom: "Ăn uống mỗi ngày", ten: "Rau, rong biển và cá nhỏ", jp: "海藻と青魚", romaji: "Kaisō to aozakana", tomTat: "Bổ sung chất xơ hòa tan và EPA/DHA tự nhiên từ cá nục, cá thu, rong biển.", hash: "c4", practiceHash: "lam-thu-4", status: "published" },
+          { so: 5, nhom: "Ăn uống mỗi ngày", ten: "Đậu nành lên men (Natto)", jp: "納豆", romaji: "Nattō · Món sợi kéo dài", tomTat: "Enzyme Nattokinase và Vitamin K2 bảo vệ mạch máu và xương khớp tuổi già.", hash: "c5", practiceHash: "lam-thu-5", status: "published" },
+          { so: 6, nhom: "Vận động & Nghỉ ngơi", ten: "Thể dục buổi sáng 3 phút", jp: "ラジオ体操", romaji: "Rajio taisō", tomTat: "13 động tác đánh thức khớp vai, lưng và nhịp thở theo đài phát thanh Nhật.", hash: "c6", practiceHash: "lam-thu-6", status: "published" },
+          { so: 7, nhom: "Vận động & Nghỉ ngơi", ten: "Đi bộ xen nhanh – chậm", jp: "インターバル速歩", romaji: "Intābaru sokuho", tomTat: "3 phút đi chậm xen 3 phút đi rảo bước giúp khỏe cơ đùi và giảm huyết áp.", hash: "c7", practiceHash: "lam-thu-7", status: "published" },
+          { so: 8, nhom: "Tinh thần & Gắn kết", ten: "Ikigai: có việc để mong mỗi sáng", jp: "生きがい", romaji: "Ikigai · Niềm vui sống", tomTat: "Chăm chậu cây, dạy cháu học hay trò chuyện cùng hội bạn già giúp sống vui khỏe.", hash: "c8", practiceHash: "lam-thu-8", status: "published", moi: true },
+          { so: 9, nhom: "Vận động & Nghỉ ngơi", ten: "Tắm ấm đúng cách trước giờ ngủ", jp: "入浴", romaji: "Nyūyoku", tomTat: "Làm ấm cơ thể an toàn, tránh sốc nhiệt và giúp dễ vào giấc ngủ sâu.", status: "upcoming" },
+          { so: 10, nhom: "Ăn uống mỗi ngày", ten: "Uống trà xanh mỗi chiều", jp: "緑茶", romaji: "Ryokucha", tomTat: "Thưởng trà giàu Catechin đúng khung giờ không gây mất ngủ ban đêm.", status: "upcoming" },
+          { so: 11, nhom: "Tinh thần & Gắn kết", ten: "Trò chuyện mỗi ngày (Moai)", jp: "模合", romaji: "Moai · Hội bạn già Okinawa", tomTat: "Gắn kết bạn bè, hàng xóm giúp tinh thần minh mẫn và giảm cô đơn.", status: "upcoming" },
+          { so: 12, nhom: "Vận động & Nghỉ ngơi", ten: "Khám sức khỏe định kỳ Ningen Dock", jp: "人間ドック", romaji: "Ningen dokku", tomTat: "Lịch tầm soát định kỳ chủ động để bảo dưỡng cơ thể mỗi năm.", status: "upcoming" }
+        ]
+      },
+      {
+        id: "xuong-khop-deo-dai",
+        number: "Cẩm nang Số 2",
+        kanji: "筋骨",
+        title: "Gân cốt dẻo dai tuổi 50+",
+        subtitle: "Bài tập giữ thăng bằng, bảo vệ khớp gối và phòng té ngã kiểu người cao tuổi Nhật Bản",
+        category: "van-dong",
+        status: "upcoming",
+        statusLabel: "Sắp ra mắt · 8 tập",
+        pagesCount: 48,
+        episodesPublished: 0,
+        episodesTotal: 8,
+        bannerImage: "song-khoe-kieu-nhat/anh/c6-mo-chuong.jpg",
+        tags: ["Khớp gối", "Thăng bằng", "Phòng té ngã", "Tập tại nhà"],
+        highlights: [
+          "Đứng một chân mở mắt 1 phút mỗi sáng (bài tập Flamingo tăng mật độ xương)",
+          "Tư thế đứng dậy, ngồi xuống và lên cầu thang không làm mòn sụn khớp gối",
+          "Thực đơn bổ sung Canxi, Vitamin D và đạm dễ tiêu cho người lớn tuổi"
+        ]
+      },
+      {
+        id: "mach-mau-huyet-ap",
+        number: "Cẩm nang Số 3",
+        kanji: "血管",
+        title: "Chăm sóc Mạch máu & Huyết áp 4 mùa",
+        subtitle: "Phòng sốc nhiệt mùa lạnh, giữ mạch máu mềm mại và theo dõi huyết áp tại nhà đúng chuẩn",
+        category: "tim-mach",
+        status: "upcoming",
+        statusLabel: "Sắp ra mắt · 8 tập",
+        pagesCount: 52,
+        episodesPublished: 0,
+        episodesTotal: 8,
+        bannerImage: "song-khoe-kieu-nhat/anh/c5-mo-chuong.jpg",
+        tags: ["Huyết áp", "Mạch máu", "Phòng sốc nhiệt", "Đo huyết áp"],
+        highlights: [
+          "Quy tắc làm ấm phòng tắm và nhà vệ sinh tránh sốc nhiệt (Heat shock) mùa đông",
+          "Khung giờ vàng đo và ghi sổ huyết áp sáng – tối để bác sĩ dễ theo dõi",
+          "Kết hợp Natto, cá biển xanh và giảm muối giúp thành mạch bền vững"
+        ]
+      },
+      {
+        id: "an-ngon-ngu-sau",
+        number: "Cẩm nang Số 4",
+        kanji: "安眠",
+        title: "Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật",
+        subtitle: "Mẹo ngâm chân ấm, thở bụng nhẹ nhàng và nhịp sinh học giúp cô chú ngủ tròn giấc",
+        category: "tinh-than",
+        status: "upcoming",
+        statusLabel: "Sắp ra mắt · 6 tập",
+        pagesCount: 44,
+        episodesPublished: 0,
+        episodesTotal: 6,
+        bannerImage: "song-khoe-kieu-nhat/anh/c8-mo-chuong.jpg",
+        tags: ["Ngủ sâu", "Ngâm chân ấm", "Giảm trằn trọc", "Tinh thần an vui"],
+        highlights: [
+          "Nghi thức tắm nắng sớm 15 phút giúp cơ thể tự tiết Melatonin vào buổi tối",
+          "Ngâm chân nước ấm 40°C trước khi ngủ 45 phút giúp ấm bàn chân, dễ ngủ",
+          "Cách xử lý khi thức giấc lúc 2–3 giờ sáng để không mệt mỏi vào hôm sau"
+        ]
+      }
+    ]
+  };
+
+  const AGENCY_KEY = 'sk-nhat-agency-v1';
+  const FONT_KEY = 'sk-nhat-large-font-v1';
+  const PROGRESS_KEY = 'sk-nhat-mau-v1';
+  const LAST_PAGE_KEY = 'sk-nhat-last-page-v1';
+
+  let catalogData = FALLBACK_CATALOG;
+  let activeCategory = 'all';
+  let searchQuery = '';
+  let shareTarget = 'hub';
+
+  function cleanPhone(raw){
+    return String(raw || '').replace(/[^\d+]/g, '').trim();
+  }
+  function formatPhoneDisplay(raw){
+    const d = cleanPhone(raw);
+    if(/^0\d{9}$/.test(d)) return d.slice(0,4) + ' ' + d.slice(4,7) + ' ' + d.slice(7);
+    return String(raw || '').trim();
+  }
+
+  let agencyState = { daily: '', zalo: '' };
+  try{
+    const saved = JSON.parse(localStorage.getItem(AGENCY_KEY) || '{}') || {};
+    if(saved.daily) agencyState.daily = String(saved.daily).trim();
+    if(saved.zalo) agencyState.zalo = String(saved.zalo).trim();
+  }catch(e){}
+
+  try{
+    const params = new URLSearchParams(location.search);
+    const qDaily = (params.get('daily') || params.get('dai-ly') || params.get('from') || '').trim();
+    const qZalo = (params.get('zalo') || params.get('phone') || params.get('sdt') || '').trim();
+    if(qDaily) agencyState.daily = qDaily;
+    if(qZalo) agencyState.zalo = qZalo;
+    if(qDaily || qZalo){
+      localStorage.setItem(AGENCY_KEY, JSON.stringify(agencyState));
+    }
+  }catch(e){}
+
+  function getAgencyQuerySuffix(){
+    const p = new URLSearchParams();
+    if(agencyState.daily) p.set('daily', agencyState.daily);
+    const z = cleanPhone(agencyState.zalo);
+    if(z) p.set('zalo', z);
+    const s = p.toString();
+    return s ? ('?' + s) : '';
+  }
+
+  function buildBookHref(basePath, hash){
+    const suffix = getAgencyQuerySuffix();
+    return basePath + suffix + (hash ? ('#' + hash) : '');
+  }
+
+  // Đọc tiến độ thực hành từ localStorage
+  function getBookProgress(progressKey){
+    try{
+      const saved = JSON.parse(localStorage.getItem(progressKey) || '{}') || {};
+      return Object.values(saved).filter(Boolean).length;
+    }catch(e){
+      return 0;
+    }
+  }
+  function getBookLastPage(lastPageKey){
+    try{
+      return JSON.parse(localStorage.getItem(lastPageKey) || 'null');
+    }catch(e){
+      return null;
+    }
+  }
+
+  // Cập nhật hiển thị thông tin Đại lý trên toàn trang
+  function syncAgencyUI(){
+    const banner = document.getElementById('agency-banner');
+    const bannerName = document.getElementById('banner-agency-name');
+    const bannerZaloLink = document.getElementById('banner-zalo-link');
+    const bannerZaloNum = document.getElementById('banner-zalo-num');
+    const miniCoverAgency = document.getElementById('mini-cover-agency');
+
+    const hasDaily = !!agencyState.daily;
+    const phone = cleanPhone(agencyState.zalo);
+
+    miniCoverAgency.textContent = hasDaily ? agencyState.daily : 'HSC · Genki Fami';
+
+    if(hasDaily || phone){
+      banner.hidden = false;
+      bannerName.textContent = hasDaily ? agencyState.daily : 'HSC · Genki Fami';
+      if(phone){
+        const pretty = formatPhoneDisplay(agencyState.zalo);
+        bannerZaloNum.textContent = pretty;
+        bannerZaloLink.href = 'https://zalo.me/' + encodeURIComponent(phone.replace(/^\+84/, '0'));
+        bannerZaloLink.hidden = false;
+      }else{
+        bannerZaloLink.hidden = true;
+      }
+    }else{
+      banner.hidden = true;
+    }
+
+    // Cập nhật các link dẫn vào Cẩm nang Số 1 để giữ ?daily=...&zalo=...
+    document.querySelectorAll('.js-book1-link').forEach(a => {
+      const rawHref = a.getAttribute('href') || 'song-khoe-kieu-nhat/#bia';
+      const hashIdx = rawHref.indexOf('#');
+      const hash = hashIdx >= 0 ? rawHref.slice(hashIdx + 1) : 'bia';
+      a.setAttribute('href', buildBookHref('song-khoe-kieu-nhat/', hash));
+    });
+
+    try{
+      const u = new URL(location.href);
+      if(agencyState.daily) u.searchParams.set('daily', agencyState.daily);
+      else u.searchParams.delete('daily');
+      if(phone) u.searchParams.set('zalo', phone);
+      else u.searchParams.delete('zalo');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    }catch(e){}
+  }
+
+  function updateHeroProgress(){
+    const checked = getBookProgress(PROGRESS_KEY);
+    document.getElementById('stat-checked-count').textContent = checked + ' / 83';
+
+    const lastPage = getBookLastPage(LAST_PAGE_KEY);
+    const contBtn = document.getElementById('hero-continue-btn');
+    const contLbl = document.getElementById('hero-continue-lbl');
+    if(lastPage && lastPage.hash && lastPage.page > 1){
+      contBtn.hidden = false;
+      contBtn.href = buildBookHref('song-khoe-kieu-nhat/', lastPage.hash);
+      contLbl.textContent = 'Đọc tiếp (Trang ' + lastPage.page + '/' + (lastPage.total || 62) + ')';
+    }else{
+      contBtn.hidden = true;
+    }
+  }
+
+  function renderCategories(){
+    const box = document.getElementById('cat-pills');
+    box.innerHTML = '';
+    (catalogData.categories || []).forEach(c => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cat-btn' + (c.id === activeCategory ? ' active' : '');
+      btn.textContent = c.label;
+      btn.addEventListener('click', () => {
+        activeCategory = c.id;
+        renderCategories();
+        renderBooks();
+      });
+      box.appendChild(btn);
+    });
+  }
+
+  function matchesQuery(book, q){
+    if(!q) return true;
+    const hay = [
+      book.number,
+      book.title,
+      book.subtitle,
+      ...(book.tags || []),
+      ...(book.highlights || []),
+      ...((book.episodes || []).map(e => e.ten + ' ' + e.romaji + ' ' + e.tomTat))
+    ].join(' ').toLowerCase();
+    return hay.includes(q.toLowerCase());
+  }
+
+  function renderBooks(){
+    const grid = document.getElementById('books-grid');
+    grid.innerHTML = '';
+    const q = searchQuery.trim();
+
+    const filtered = (catalogData.books || []).filter(b => {
+      if(activeCategory === 'published' && b.status !== 'published') return false;
+      if(activeCategory !== 'all' && activeCategory !== 'published' && b.category !== activeCategory) return false;
+      return matchesQuery(b, q);
+    });
+
+    if(!filtered.length){
+      const empty = document.createElement('div');
+      empty.style.cssText = 'grid-column:1/-1;text-align:center;padding:32px;background:var(--paper-2);border-radius:16px;color:var(--ink-soft)';
+      empty.textContent = 'Không tìm thấy cẩm nang phù hợp với từ khóa "' + q + '". Hãy thử từ khóa khác.';
+      grid.appendChild(empty);
+      return;
+    }
+
+    filtered.forEach(b => {
+      const isPub = b.status === 'published';
+      const card = document.createElement('article');
+      card.className = 'book-card ' + (isPub ? 'is-published' : 'is-upcoming');
+
+      const checkedCount = isPub && b.storageProgressKey ? getBookProgress(b.storageProgressKey) : 0;
+      const lastPage = isPub && b.storageLastPageKey ? getBookLastPage(b.storageLastPageKey) : null;
+
+      const bannerUrl = b.bannerImage || b.coverImage;
+      const openHref = isPub ? buildBookHref(b.path, 'bia') : '#';
+
+      let footerHtml = '';
+      if(isPub){
+        const contHref = (lastPage && lastPage.hash && lastPage.page > 1)
+          ? buildBookHref(b.path, lastPage.hash)
+          : buildBookHref(b.path, 'lam-thu-1');
+        const contText = (lastPage && lastPage.hash && lastPage.page > 1)
+          ? ('Đọc tiếp tr. ' + lastPage.page)
+          : 'Bảng 7 ngày';
+        footerHtml = `
+          <a class="btn-card-primary" href="${openHref}">Mở đọc Cẩm nang (${b.pagesCount} tr.) ›</a>
+          <a class="btn-card-secondary" href="${contHref}">${contText}</a>
+        `;
+      }else{
+        footerHtml = `
+          <button type="button" class="btn-card-secondary js-notify-book" data-title="${b.title}" style="width:100%">
+            Nhận thông báo khi phát hành ›
+          </button>
+        `;
+      }
+
+      const progressHtml = isPub ? `
+        <div class="book-progress-box">
+          <span>Tiến độ thực hành trên máy:</span>
+          <strong>${checkedCount} / ${b.totalCheckItems || 83} mục đã đánh dấu</strong>
+        </div>
+      ` : '';
+
+      card.innerHTML = `
+        <div class="book-card-banner">
+          <img src="${bannerUrl}" alt="${b.title}" loading="lazy">
+          <div class="book-card-overlay">
+            <div class="card-top-badges">
+              <span class="badge-num">${b.number}</span>
+              <span class="badge-status ${isPub ? 'published' : 'upcoming'}">${b.statusLabel || ''}</span>
+            </div>
+            <div class="card-kanji-row">
+              <span class="card-kanji">${b.kanji || ''}</span>
+              <span class="card-meta-pill">${b.episodesPublished}/${b.episodesTotal} tập · ${b.pagesCount} trang</span>
+            </div>
+          </div>
+        </div>
+        <div class="book-card-body">
+          <h3 class="book-card-title">${b.title}</h3>
+          <p class="book-card-sub">${b.subtitle}</p>
+          <div class="tag-row">
+            ${(b.tags || []).map(t => `<span class="tag-chip">${t}</span>`).join('')}
+          </div>
+          <ul class="highlight-list">
+            ${(b.highlights || []).map(h => `<li><span>${h}</span></li>`).join('')}
+          </ul>
+          ${progressHtml}
+          <div class="book-card-footer">
+            ${footerHtml}
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    grid.querySelectorAll('.js-notify-book').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = btn.dataset.title || 'Cẩm nang mới';
+        const phone = cleanPhone(agencyState.zalo);
+        if(phone){
+          window.open('https://zalo.me/' + encodeURIComponent(phone.replace(/^\+84/, '0')), '_blank', 'noopener');
+        }else{
+          showToast('Bộ "' + title + '" đang được biên soạn và sẽ cập nhật sớm trên Tủ sách Genki!');
+        }
+      });
+    });
+  }
+
+  function renderEpisodes(){
+    const grid = document.getElementById('episodes-grid');
+    grid.innerHTML = '';
+    const book1 = (catalogData.books || [])[0];
+    if(!book1 || !book1.episodes) return;
+
+    const q = searchQuery.trim().toLowerCase();
+    const eps = book1.episodes.filter(ep => {
+      if(!q) return true;
+      return (ep.ten + ' ' + ep.romaji + ' ' + ep.tomTat + ' ' + ep.nhom).toLowerCase().includes(q);
+    });
+
+    eps.forEach(ep => {
+      const isPub = ep.status === 'published';
+      const card = document.createElement('div');
+      card.className = 'ep-card ' + (isPub ? 'published' : 'upcoming');
+
+      const readHref = isPub ? buildBookHref(book1.path, ep.hash) : '#';
+      const checkHref = isPub ? buildBookHref(book1.path, ep.practiceHash) : '#';
+
+      card.innerHTML = `
+        <div class="ep-top">
+          <span class="ep-num"><b>${ep.so}</b> Tập ${ep.so}${ep.moi ? ' · MỚI' : ''}</span>
+          <span class="ep-kanji">${ep.jp || ''}</span>
+        </div>
+        <h3 class="ep-title">${ep.ten}</h3>
+        <p class="ep-desc">${ep.tomTat}</p>
+        <div class="ep-actions">
+          ${isPub ? `
+            <a class="ep-link-read" href="${readHref}">Đọc Tập ${ep.so} ›</a>
+            <a class="ep-link-check" href="${checkHref}" title="Mở trang đóng dấu 7 ngày">Đóng dấu 7 ngày</a>
+          ` : `
+            <span class="ep-soon-tag">Đang biên soạn · Sắp ra mắt</span>
+          `}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // ---------- Chia sẻ & Thẻ QR ----------
+  const modal = document.getElementById('share-modal');
+  const inpName = document.getElementById('inp-agency-name');
+  const inpZalo = document.getElementById('inp-agency-zalo');
+  const segHub = document.getElementById('seg-target-hub');
+  const segBook1 = document.getElementById('seg-target-book1');
+  const urlBox = document.getElementById('share-url-box');
+  const qrBox = document.getElementById('qr-preview-box');
+
+  function buildShareUrl(){
+    const originBase = (location.origin && location.origin !== 'null')
+      ? (location.origin + location.pathname.replace(/index\.html$/, ''))
+      : 'https://genki-camnang.pages.dev/';
+    const targetUrl = shareTarget === 'book1'
+      ? new URL('song-khoe-kieu-nhat/', originBase)
+      : new URL('./', originBase);
+
+    const d = inpName.value.trim();
+    const z = cleanPhone(inpZalo.value);
+    if(d) targetUrl.searchParams.set('daily', d);
+    if(z) targetUrl.searchParams.set('zalo', z);
+    if(shareTarget === 'book1') targetUrl.hash = 'bia';
+    return targetUrl.toString();
+  }
+
+  function updateModalPreview(){
+    const url = buildShareUrl();
+    urlBox.textContent = url;
+    if(window.SimpleQR){
+      qrBox.innerHTML = window.SimpleQR.toSVG(url, 3);
+    }
+  }
+
+  function saveAgencyFromModal(){
+    agencyState.daily = inpName.value.trim();
+    agencyState.zalo = inpZalo.value.trim();
+    try{
+      localStorage.setItem(AGENCY_KEY, JSON.stringify(agencyState));
+    }catch(e){}
+    syncAgencyUI();
+    updateHeroProgress();
+    renderBooks();
+    renderEpisodes();
+    updateModalPreview();
+  }
+
+  function openShareModal(focusInput){
+    inpName.value = agencyState.daily || '';
+    inpZalo.value = agencyState.zalo || '';
+    updateModalPreview();
+    modal.hidden = false;
+    if(focusInput) inpName.focus();
+  }
+  function closeShareModal(){
+    modal.hidden = true;
+  }
+
+  document.getElementById('btn-open-share').addEventListener('click', () => openShareModal(false));
+  document.getElementById('hero-share-btn').addEventListener('click', () => openShareModal(false));
+  document.getElementById('partner-open-share').addEventListener('click', () => openShareModal(true));
+  document.getElementById('btn-banner-edit').addEventListener('click', () => openShareModal(true));
+  document.getElementById('btn-close-modal').addEventListener('click', closeShareModal);
+  modal.addEventListener('click', e => { if(e.target === modal) closeShareModal(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal.hidden) closeShareModal(); });
+
+  segHub.addEventListener('click', () => {
+    shareTarget = 'hub';
+    segHub.classList.add('active');
+    segBook1.classList.remove('active');
+    updateModalPreview();
+  });
+  segBook1.addEventListener('click', () => {
+    shareTarget = 'book1';
+    segBook1.classList.add('active');
+    segHub.classList.remove('active');
+    updateModalPreview();
+  });
+
+  inpName.addEventListener('input', saveAgencyFromModal);
+  inpZalo.addEventListener('input', saveAgencyFromModal);
+  document.getElementById('btn-reset-agency').addEventListener('click', () => {
+    inpName.value = '';
+    inpZalo.value = '';
+    saveAgencyFromModal();
+    showToast('Đã đặt lại thông tin Đại lý mặc định');
+  });
+
+  document.getElementById('btn-copy-share-url').addEventListener('click', async () => {
+    const url = buildShareUrl();
+    try{
+      await navigator.clipboard.writeText(url);
+      showToast('Đã sao chép đường link! Dán vào Zalo để gửi ngay.');
+    }catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); showToast('Đã sao chép đường link!'); }catch(err){}
+      ta.remove();
+    }
+  });
+
+  const nativeShareBtn = document.getElementById('btn-native-share');
+  if(navigator.share){
+    nativeShareBtn.hidden = false;
+    nativeShareBtn.addEventListener('click', async () => {
+      const url = buildShareUrl();
+      const title = agencyState.daily
+        ? ('Genki Cẩm Nang — Quà tặng từ ' + agencyState.daily)
+        : 'Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật';
+      try{
+        await navigator.share({ title, text: 'Tủ sách cẩm nang Sống khỏe kiểu Nhật dễ làm ngay tại nhà:', url });
+      }catch(e){}
+    });
+  }
+
+  document.getElementById('btn-download-qr').addEventListener('click', () => {
+    if(!window.SimpleQR) return;
+    const url = buildShareUrl();
+    window.SimpleQR.downloadCard(url, {
+      title: shareTarget === 'book1' ? 'Sống khỏe kiểu Nhật' : 'Tủ sách Genki Cẩm Nang',
+      sub: 'Quét mã QR bằng Zalo hoặc Camera để mở đọc',
+      agency: agencyState.daily || 'HSC · Genki Fami',
+      zalo: formatPhoneDisplay(agencyState.zalo)
+    });
+    showToast('Đang tải ảnh thẻ QR (PNG)…');
+  });
+
+  // ---------- Chế độ Chữ to cho người lớn tuổi ----------
+  const fontToggleBtn = document.getElementById('btn-font-toggle');
+  const fontToggleLbl = document.getElementById('font-toggle-lbl');
+  let isLargeFont = false;
+  try{ isLargeFont = localStorage.getItem(FONT_KEY) === '1'; }catch(e){}
+  function applyFontMode(){
+    document.body.classList.toggle('large-text', isLargeFont);
+    fontToggleBtn.setAttribute('aria-pressed', isLargeFont ? 'true' : 'false');
+    fontToggleLbl.textContent = isLargeFont ? 'Chữ: To (ông bà)' : 'Chữ: Chuẩn';
+  }
+  applyFontMode();
+  fontToggleBtn.addEventListener('click', () => {
+    isLargeFont = !isLargeFont;
+    try{ localStorage.setItem(FONT_KEY, isLargeFont ? '1' : '0'); }catch(e){}
+    applyFontMode();
+    showToast(isLargeFont ? 'Đã bật chế độ Chữ TO cho người lớn tuổi' : 'Đã chuyển về cỡ chữ chuẩn');
+  });
+
+  // ---------- Tìm kiếm ----------
+  document.getElementById('search-input').addEventListener('input', e => {
+    searchQuery = e.target.value || '';
+    renderBooks();
+    renderEpisodes();
+  });
+
+  // ---------- Toast ----------
+  const toastEl = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toastEl.hidden = true; }, 2800);
+  }
+
+  // Khởi tạo giao diện và tải catalog.json nếu có
+  syncAgencyUI();
+  updateHeroProgress();
+  renderCategories();
+  renderBooks();
+  renderEpisodes();
+
+  fetch('catalog.json')
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if(data && Array.isArray(data.books)){
+        catalogData = data;
+        renderCategories();
+        renderBooks();
+        renderEpisodes();
+      }
+    })
+    .catch(() => {});
+})();
+</script>
+</body>
+</html>
