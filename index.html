@@ -1197,15 +1197,15 @@ a{color:inherit}
       </p>
       <div class="hero-stats">
         <div class="stat-chip">
-          <b>182</b>
-          <span>Trang sách lật 3D<br>trên 4 bộ đang mở đọc</span>
+          <b>262</b>
+          <span>Trang sách lật 3D<br>trên 6 bộ đang mở đọc</span>
         </div>
         <div class="stat-chip">
-          <b id="stat-checked-count">0 / 180</b>
+          <b id="stat-checked-count">0 / 242</b>
           <span>Mục thực hành &amp; dấu 7 ngày<br>đã đánh dấu trên máy bạn</span>
         </div>
         <div class="stat-chip">
-          <b>4 / 4</b>
+          <b>6 / 6</b>
           <span>Bộ cẩm nang đã phát hành<br>trong tủ sách Genki</span>
         </div>
       </div>
@@ -1222,6 +1222,12 @@ a{color:inherit}
         </a>
         <a class="btn-hero-sub js-book4-link" id="hero-read-book4-btn" href="an-ngon-ngu-sau/#bia">
           <span>Số 4: Ăn ngon ngủ sâu (40 tr.) ›</span>
+        </a>
+        <a class="btn-hero-sub js-book5-link" id="hero-read-book5-btn" href="omega-3-tim-nao/#bia" style="background:rgba(184,53,43,.85);border-color:rgba(255,255,255,.4)">
+          <span>Số 5: Omega-3 Tim Não (40 tr.) ›</span>
+        </a>
+        <a class="btn-hero-sub js-book6-link" id="hero-read-book6-btn" href="tao-mozuku-fucoidan/#bia" style="background:var(--jade);border-color:rgba(255,255,255,.4)">
+          <span>Số 6: Tảo Mozuku Fucoidan (40 tr.) ›</span>
         </a>
         <a class="btn-hero-sub" id="hero-continue-btn" href="song-khoe-kieu-nhat/#lam-thu-1" hidden>
           <span id="hero-continue-lbl">Đọc tiếp trang đang mở</span>
@@ -1298,6 +1304,8 @@ a{color:inherit}
       <button type="button" class="book-tab-btn" id="tab-book-2" data-book-idx="1">Số 2: Ngừa Đột Quỵ (9 chương)</button>
       <button type="button" class="book-tab-btn" id="tab-book-3" data-book-idx="2">Số 3: Gân cốt dẻo dai 50+ (9 chương)</button>
       <button type="button" class="book-tab-btn" id="tab-book-4" data-book-idx="3">Số 4: Ăn ngon ngủ sâu (9 chương)</button>
+      <button type="button" class="book-tab-btn" id="tab-book-5" data-book-idx="4">Số 5: Omega-3 Tim Não (9 chương)</button>
+      <button type="button" class="book-tab-btn" id="tab-book-6" data-book-idx="5">Số 6: Tảo Mozuku Fucoidan (9 chương)</button>
     </div>
 
     <div class="episodes-grid" id="episodes-grid"></div>
@@ -1350,11 +1358,13 @@ a{color:inherit}
     <div class="modal-sec">
       <h4>1. Chọn nội dung người nhận sẽ mở ra</h4>
       <div class="seg-group" role="group" aria-label="Chọn đích chia sẻ">
-        <button type="button" class="seg-opt active" id="seg-target-hub" data-target="hub">Cả tủ sách (4 bộ)</button>
+        <button type="button" class="seg-opt active" id="seg-target-hub" data-target="hub">Cả tủ sách (6 bộ)</button>
         <button type="button" class="seg-opt" id="seg-target-book1" data-target="book1">Số 1: Sống khỏe</button>
         <button type="button" class="seg-opt" id="seg-target-book2" data-target="book2">Số 2: Ngừa Đột quỵ</button>
         <button type="button" class="seg-opt" id="seg-target-book3" data-target="book3">Số 3: Gân cốt 50+</button>
         <button type="button" class="seg-opt" id="seg-target-book4" data-target="book4">Số 4: Ngủ sâu</button>
+        <button type="button" class="seg-opt" id="seg-target-book5" data-target="book5">Số 5: Omega-3</button>
+        <button type="button" class="seg-opt" id="seg-target-book6" data-target="book6">Số 6: Fucoidan</button>
       </div>
     </div>
 
@@ -1404,10 +1414,11 @@ a{color:inherit}
 (function(){
   const FALLBACK_CATALOG = {
     categories: [
-      { id: "all", label: "Tất cả cẩm nang (4)" },
-      { id: "published", label: "Đang mở đọc (4)" },
+      { id: "all", label: "Tất cả cẩm nang (6)" },
+      { id: "published", label: "Đang mở đọc (6)" },
       { id: "thoi-quen", label: "Dinh dưỡng & Thói quen" },
-      { id: "tim-mach", label: "Đột quỵ & Huyết áp" },
+      { id: "tim-mach", label: "Tim mạch, Đột quỵ & Trí não" },
+      { id: "mien-dich", label: "Miễn dịch & Tảo biển" },
       { id: "van-dong", label: "Xương khớp & Vận động" },
       { id: "tinh-than", label: "Giấc ngủ & Tinh thần" }
     ],
@@ -1570,6 +1581,84 @@ a{color:inherit}
           { so: 8, nhom: "Không gian phòng ngủ", ten: "Chọn gối, nệm và ánh sáng phòng ngủ kiểu Ryokan Nhật Bản", jp: "寝室", romaji: "Shinshitsu", tomTat: "Độ cao gối chuẩn cho đốt sống cổ và nhiệt độ – độ ẩm phòng ngủ theo mùa.", status: "upcoming" },
           { so: 9, nhom: "Thư giãn bốn mùa", ten: "Tắm rừng (Shinrin-yoku) và thưởng hương tự nhiên giúp an thần", jp: "森林浴", romaji: "Shinrin-yoku", tomTat: "Tận hưởng cây xanh, hương vỏ cam quýt và âm thanh tự nhiên làm dịu căng thẳng.", status: "upcoming" }
         ]
+      },
+      {
+        id: "omega-3-tim-nao",
+        number: "Cẩm nang Số 5",
+        kanji: "魚油",
+        title: "Omega-3: Khỏe tim, Sáng não kiểu Nhật",
+        subtitle: "Hướng dẫn bổ sung EPA, DHA, dầu gan cá mập biển sâu & sắc đỏ Astaxanthin giúp làm sạch mỡ máu, giữ mạch máu mềm mại và nuôi dưỡng trí nhớ, thị lực tuổi 50+",
+        category: "tim-mach",
+        status: "published",
+        statusLabel: "Đang mở đọc · Chương 1–6",
+        badge: "MỚI · EPA/DHA & Astaxanthin",
+        pagesCount: 40,
+        episodesPublished: 6,
+        episodesTotal: 9,
+        path: "omega-3-tim-nao/",
+        defaultPracticeHash: "so-omega3",
+        defaultPracticeLabel: "Sổ Omega-3 7 ngày",
+        coverImage: "omega-3-tim-nao/anh/sp-omega3.webp",
+        bannerImage: "omega-3-tim-nao/anh/c1-mo-chuong.jpg",
+        storageProgressKey: "om3-mau-v1",
+        storageLastPageKey: "om3-nhat-last-page-v1",
+        totalCheckItems: 31,
+        tags: ["Cá biển xanh Aozakana", "EPA dọn mỡ máu", "DHA sáng não & mắt", "Dầu gan cá mập", "Sắc đỏ Astaxanthin", "Uống ngay sau ăn"],
+        highlights: [
+          "Sách lật 40 trang: giải mã bí quyết người Nhật ăn cá biển giúp tỷ lệ bệnh mạch vành thấp bậc nhất thế giới",
+          "Phân biệt rõ vai trò EPA (dọn Triglyceride, êm mạch máu) và DHA (xây màng tế bào não & võng mạc mắt)",
+          "Tích hợp Bảng tự kiểm 9 dấu hiệu, Sổ theo dõi Omega-3 7 ngày và Thử thách nhìn rõ 15 giây"
+        ],
+        episodes: [
+          { so: 1, nhom: "Mạch máu & Cá biển", ten: "Vì sao người Nhật ăn cá biển mà mạch máu trẻ lâu?", jp: "青魚", romaji: "Aozakana to Kekkan", tomTat: "Nghiên cứu JPHC trên 40.000 người Nhật và vai trò làm mềm màng hồng cầu của Omega-3.", hash: "c1-mo", practiceHash: "c1-lam-thu", practiceLabel: "Tự kiểm 9 dấu hiệu", status: "published" },
+          { so: 2, nhom: "Bảo vệ tim mạch", ten: "EPA — “Đội dọn dẹp” làm êm dòng máu & bảo vệ trái tim", jp: "血液サラサラ", romaji: "Ketsueki Sarasara · JELIS", tomTat: "Cơ chế giảm mỡ máu Triglyceride, giữ nội mô mạch máu trơn láng và các thói quen bảo vệ tim.", hash: "c2-mo", practiceHash: "c2-lam-thu", practiceLabel: "3 việc giữ mạch êm", status: "published" },
+          { so: 3, nhom: "Trí nhớ & Thị lực", ten: "DHA — “Gạch xây” trí nhớ sáng suốt & đôi mắt tinh anh", jp: "脳と目", romaji: "Nō to Me · Nō-tore", tomTat: "Nuôi dưỡng 40% axit béo ở não, 50% ở võng mạc mắt cùng Sổ theo dõi cá biển & Omega-3 7 ngày.", hash: "c3-mo", practiceHash: "so-omega3", practiceLabel: "Sổ Omega-3 7 ngày", status: "published" },
+          { so: 4, nhom: "Hiệp đồng chống oxy hóa", ten: "Dầu gan cá mập biển sâu & sắc đỏ Astaxanthin", jp: "深海鮫", romaji: "Samekanyu & Astaxanthin", tomTat: "Vì sao viên Omega-3 chuẩn Nhật có sắc đỏ tự nhiên giúp bảo vệ DHA/EPA khỏi oxy hóa.", hash: "c4-mo", practiceHash: "c4-lam-thu", practiceLabel: "Đóng dấu 7 ngày", status: "published", moi: true },
+          { so: 5, nhom: "Cách dùng chuẩn Nhật", ten: "Uống đúng lúc, ăn đúng cách để hấp thu trọn vẹn", jp: "食後", romaji: "Shokugo · Tăng hấp thu gấp 3", tomTat: "Thời điểm vàng ngay sau bữa ăn 15–30 phút và bộ tính khẩu phần cá biển & Omega-3.", hash: "c5-mo", practiceHash: "c5-lam-thu", practiceLabel: "Tính khẩu phần & 7 ngày", status: "published" },
+          { so: 6, nhom: "Lối sống trường thọ", ten: "Lối sống dưỡng mạch & dưỡng não bền lâu", jp: "血管年齢", romaji: "Kekkan Nenrei", tomTat: "Kiềng 3 chân giữ tuổi mạch máu trẻ hơn tuổi thật và đồng hồ 15 giây thư giãn mắt – não.", hash: "c6-mo", practiceHash: "c6-lam-thu", practiceLabel: "Thử thách 15 giây", status: "published" },
+          { so: 7, nhom: "Đọc chỉ số xét nghiệm", ten: "Cách đọc bảng xét nghiệm mỡ máu (Triglyceride, HDL, LDL) tại nhà", jp: "脂質検査", romaji: "Shishitsu kensa", tomTat: "Hiểu đúng ý nghĩa từng chỉ số mỡ máu và tỷ lệ EPA/AA của y học Nhật Bản.", status: "upcoming" },
+          { so: 8, nhom: "Mẹo bếp Nhật", ten: "Cách chế biến cá biển không tanh, giữ trọn Omega-3 không bị cháy", jp: "調理法", romaji: "Chōrihō", tomTat: "Nhiệt độ hấp, kho nhạt và ướp gừng/miso giúp giữ nguyên vẹn dưỡng chất.", status: "upcoming" },
+          { so: 9, nhom: "Chăm sóc mắt tuổi 60+", ten: "Bài tập chườm ấm và massage quanh hố mắt giảm khô mỏi", jp: "目の保養", romaji: "Me no hoyō", tomTat: "Kết hợp dưỡng chất võng mạc với 3 phút thư giãn cơ mi mỗi tối.", status: "upcoming" }
+        ]
+      },
+      {
+        id: "tao-mozuku-fucoidan",
+        number: "Cẩm nang Số 6",
+        kanji: "免疫",
+        title: "Tảo Mozuku & Fucoidan: Lá chắn miễn dịch",
+        subtitle: "Bí quyết từ vùng biển san hô Okinawa giúp đánh thức tế bào miễn dịch tự nhiên NK, che chở niêm mạc dạ dày – đường ruột và hạn chế oxy hóa tuổi 50+",
+        category: "mien-dich",
+        status: "published",
+        statusLabel: "Đang mở đọc · Chương 1–6",
+        badge: "MỚI · 100% Mozuku Okinawa",
+        pagesCount: 40,
+        episodesPublished: 6,
+        episodesTotal: 9,
+        path: "tao-mozuku-fucoidan/",
+        defaultPracticeHash: "so-fucoidan",
+        defaultPracticeLabel: "Sổ miễn dịch 7 ngày",
+        coverImage: "tao-mozuku-fucoidan/anh/sp-fucoidan.webp",
+        bannerImage: "tao-mozuku-fucoidan/anh/c1-mo-chuong.jpg",
+        storageProgressKey: "fuc-mau-v1",
+        storageLastPageKey: "fuc-nhat-last-page-v1",
+        totalCheckItems: 31,
+        tags: ["Tảo nâu Mozuku Okinawa", "Đánh thức tế bào NK", "Che chở niêm mạc dạ dày", "Prebiotic đường ruột", "Chống oxy hóa", "Chuẩn 220mg/viên"],
+        highlights: [
+          "Sách lật 40 trang: khám phá vì sao tảo nâu Mozuku Okinawa giàu Fucoidan gấp 5 lần tảo thường",
+          "Giải thích dễ hiểu cơ chế đánh thức tế bào miễn dịch NK và bảo vệ 70% miễn dịch ở đường ruột",
+          "Tích hợp Bảng tự kiểm 9 dấu hiệu đề kháng, Sổ theo dõi 7 ngày & Đồng hồ 30 giây xoa ấm bụng"
+        ],
+        episodes: [
+          { so: 1, nhom: "Miễn dịch tự nhiên", ten: "Bí mật hệ miễn dịch tuổi 50+ & Lá chắn tự nhiên kiểu Nhật", jp: "免疫", romaji: "Men'eki · Đánh thức tế bào NK", tomTat: "Vai trò của tế bào NK và đại thực bào tuần tra 24/24 và cách dùng thực đơn tảo biển.", hash: "c1-mo", practiceHash: "c1-lam-thu", practiceLabel: "Ghi nhớ lá chắn NK", status: "published" },
+          { so: 2, nhom: "Tự kiểm đề kháng", ten: "9 dấu hiệu sức đề kháng & đường ruột đang cầu cứu", jp: "兆候", romaji: "Chōkō · Bảng tự kiểm 9 dấu hiệu", tomTat: "Nhận diện sớm tín hiệu đề kháng giảm và 3 việc giữ ấm cơ thể khi giao mùa.", hash: "c2-mo", practiceHash: "c2-lam-thu", practiceLabel: "3 việc giữ ấm cổ & bụng", status: "published" },
+          { so: 3, nhom: "Dạ dày & Đường ruột", ten: "70% miễn dịch nằm ở ruột: Fucoidan che chở dạ dày & nuôi lợi khuẩn", jp: "腸活", romaji: "Chōkatsu · GALT", tomTat: "Lớp màng nhầy bảo vệ dạ dày, nuôi lợi khuẩn Bifidobacterium và Sổ theo dõi 7 ngày.", hash: "c3-mo", practiceHash: "so-fucoidan", practiceLabel: "Sổ Fucoidan 7 ngày", status: "published" },
+          { so: 4, nhom: "Kho báu vùng đảo thọ", ten: "Sự kỳ diệu của tảo nâu Mozuku vùng biển Okinawa", jp: "沖縄", romaji: "Okinawa Mozuku · Gấp 5 lần Fucoidan", tomTat: "Từ 1 kg tảo tươi đến 1 gam Fucoidan tinh khiết và tham khảo viên uống Fucoidan Genki Fami (220 mg/viên).", hash: "c4-mo", practiceHash: "c4-lam-thu", practiceLabel: "Đóng dấu 7 ngày", status: "published", moi: true },
+          { so: 5, nhom: "Chống oxy hóa", ten: "Chống oxy hóa & đồng hành bền bỉ cùng tuổi già", jp: "抗酸化", romaji: "Kōsanka · Khiên chắn gốc tự do", tomTat: "3 nguyên tắc uống Fucoidan cùng nước ấm và bộ quy đổi lượng Fucoidan & tảo tươi tương đương.", hash: "c5-mo", practiceHash: "c5-lam-thu", practiceLabel: "Tính Fucoidan & 7 ngày", status: "published" },
+          { so: 6, nhom: "Dưỡng sinh bốn mùa", ten: "4 trụ cột miễn dịch kiểu Okinawa: Bụng ấm, tâm an", jp: "温活", romaji: "Onkatsu & Egao", tomTat: "Giữ thân nhiệt ấm 36,5°C, ngủ sâu và đồng hồ 30 giây xoa ấm bụng đánh thức miễn dịch.", hash: "c6-mo", practiceHash: "c6-lam-thu", practiceLabel: "30 giây xoa ấm bụng", status: "published" },
+          { so: 7, nhom: "Chăm sóc khi giao mùa", ten: "Giữ ấm cổ họng và niêm mạc mũi khi thời tiết chuyển mùa", jp: "季節の変わり目", romaji: "Kisetsu no kawarime", tomTat: "Thói quen súc họng trà ấm và giữ ẩm đường hô hấp trên của người Nhật.", status: "upcoming" },
+          { so: 8, nhom: "Món ăn trường thọ", ten: "Cách làm món canh tảo biển và salad giấm thanh mát chuẩn Okinawa", jp: "沖縄料理", romaji: "Okinawa ryōri", tomTat: "3 công thức bếp nhà thanh đạm giúp người lớn tuổi ăn ngon miệng mỗi tuần.", status: "upcoming" },
+          { so: 9, nhom: "Tự kiểm tra sức đề kháng", ten: "Bảng 10 dấu hiệu nhận biết sớm hệ miễn dịch và đường ruột cần nghỉ ngơi", jp: "体調管理", romaji: "Taichō kanri", tomTat: "Lắng nghe tín hiệu từ giấc ngủ, làn da và tiêu hóa để điều chỉnh kịp thời.", status: "upcoming" }
+        ]
       }
     ]
   };
@@ -1584,6 +1673,10 @@ a{color:inherit}
   const LAST_PAGE_KEY_3 = 'gk-nhat-last-page-v1';
   const PROGRESS_KEY_4 = 'an-mau-v1';
   const LAST_PAGE_KEY_4 = 'an-nhat-last-page-v1';
+  const PROGRESS_KEY_5 = 'om3-mau-v1';
+  const LAST_PAGE_KEY_5 = 'om3-nhat-last-page-v1';
+  const PROGRESS_KEY_6 = 'fuc-mau-v1';
+  const LAST_PAGE_KEY_6 = 'fuc-nhat-last-page-v1';
 
   let catalogData = FALLBACK_CATALOG;
   let activeCategory = 'all';
@@ -1632,7 +1725,7 @@ a{color:inherit}
     return basePath + suffix + (hash ? ('#' + hash) : '');
   }
 
-  // Đọc tiến độ thực hành từ localStorage (hỗ trợ cả boolean true của Số 1 và 1 của Số 2, 3, 4)
+  // Đọc tiến độ thực hành từ localStorage (hỗ trợ cả boolean true của Số 1, 5, 6 và 1/true của Số 2–4)
   function getBookProgress(progressKey){
     try{
       const saved = JSON.parse(localStorage.getItem(progressKey) || '{}') || {};
@@ -1688,12 +1781,14 @@ a{color:inherit}
       banner.hidden = true;
     }
 
-    // Cập nhật các link dẫn vào 4 Cẩm nang để giữ ?daily=...&zalo=...
+    // Cập nhật các link dẫn vào 6 Cẩm nang để giữ ?daily=...&zalo=...
     [
       ['.js-book1-link', 'song-khoe-kieu-nhat/'],
       ['.js-book2-link', 'ngua-dot-quy/'],
       ['.js-book3-link', 'xuong-khop-deo-dai/'],
-      ['.js-book4-link', 'an-ngon-ngu-sau/']
+      ['.js-book4-link', 'an-ngon-ngu-sau/'],
+      ['.js-book5-link', 'omega-3-tim-nao/'],
+      ['.js-book6-link', 'tao-mozuku-fucoidan/']
     ].forEach(([sel, base]) => {
       document.querySelectorAll(sel).forEach(a => {
         const rawHref = a.getAttribute('href') || (base + '#bia');
@@ -1718,17 +1813,23 @@ a{color:inherit}
     const checked2 = getBookProgress(PROGRESS_KEY_2);
     const checked3 = getBookProgress(PROGRESS_KEY_3);
     const checked4 = getBookProgress(PROGRESS_KEY_4);
-    document.getElementById('stat-checked-count').textContent = (checked1 + checked2 + checked3 + checked4) + ' / 180';
+    const checked5 = getBookProgress(PROGRESS_KEY_5);
+    const checked6 = getBookProgress(PROGRESS_KEY_6);
+    document.getElementById('stat-checked-count').textContent = (checked1 + checked2 + checked3 + checked4 + checked5 + checked6) + ' / 242';
 
     const last1 = getBookLastPage(LAST_PAGE_KEY_1, 62);
     const last2 = getBookLastPage(LAST_PAGE_KEY_2, 40);
     const last3 = getBookLastPage(LAST_PAGE_KEY_3, 40);
     const last4 = getBookLastPage(LAST_PAGE_KEY_4, 40);
+    const last5 = getBookLastPage(LAST_PAGE_KEY_5, 40);
+    const last6 = getBookLastPage(LAST_PAGE_KEY_6, 40);
     const contBtn = document.getElementById('hero-continue-btn');
     const contLbl = document.getElementById('hero-continue-lbl');
 
     let chosen = null;
-    if(last4 && last4.page > 1) chosen = { path: 'an-ngon-ngu-sau/', label: 'Số 4', data: last4, total: 40 };
+    if(last6 && last6.page > 1) chosen = { path: 'tao-mozuku-fucoidan/', label: 'Số 6', data: last6, total: 40 };
+    else if(last5 && last5.page > 1) chosen = { path: 'omega-3-tim-nao/', label: 'Số 5', data: last5, total: 40 };
+    else if(last4 && last4.page > 1) chosen = { path: 'an-ngon-ngu-sau/', label: 'Số 4', data: last4, total: 40 };
     else if(last3 && last3.page > 1) chosen = { path: 'xuong-khop-deo-dai/', label: 'Số 3', data: last3, total: 40 };
     else if(last2 && last2.page > 1) chosen = { path: 'ngua-dot-quy/', label: 'Số 2', data: last2, total: 40 };
     else if(last1 && last1.page > 1) chosen = { path: 'song-khoe-kieu-nhat/', label: 'Số 1', data: last1, total: 62 };
@@ -1938,14 +2039,18 @@ a{color:inherit}
     book1: 'song-khoe-kieu-nhat/',
     book2: 'ngua-dot-quy/',
     book3: 'xuong-khop-deo-dai/',
-    book4: 'an-ngon-ngu-sau/'
+    book4: 'an-ngon-ngu-sau/',
+    book5: 'omega-3-tim-nao/',
+    book6: 'tao-mozuku-fucoidan/'
   };
   const SHARE_TITLES = {
-    hub: 'Tủ sách Genki Cẩm Nang (4 bộ)',
+    hub: 'Tủ sách Genki Cẩm Nang (6 bộ)',
     book1: 'Sống khỏe kiểu Nhật',
     book2: 'Đột quỵ: Người Nhật đã làm gì?',
     book3: 'Gân cốt dẻo dai tuổi 50+',
-    book4: 'Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật'
+    book4: 'Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật',
+    book5: 'Omega-3: Khỏe tim, Sáng não kiểu Nhật',
+    book6: 'Tảo Mozuku & Fucoidan: Lá chắn miễn dịch'
   };
 
   function buildShareUrl(){

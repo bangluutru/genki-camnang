@@ -1,0 +1,18 @@
+{
+  "name": "Cẩm nang Tảo biển Mozuku & Fucoidan — Lá chắn đề kháng Okinawa",
+  "short_name": "Fucoidan Nhật",
+  "description": "Cẩm nang tăng cường miễn dịch tự nhiên, bảo vệ niêm mạc dạ dày – đường ruột và chống oxy hóa bằng chiết xuất tảo nâu Mozuku vùng biển Okinawa Nhật Bản.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#22365A",
+  "theme_color": "#22365A",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "anh/daruma-quyet-tam.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

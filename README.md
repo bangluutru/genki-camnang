@@ -1,13 +1,13 @@
 # Genki Cẩm Nang — Tủ sách Sống khỏe kiểu Nhật
 
-Trang cổng thư viện điện tử (**Web Flipbook / PWA**) chia sẻ 4 bộ cẩm nang chăm sóc sức khỏe kiểu Nhật dành cho gia đình và người lớn tuổi Việt Nam (tổng cộng **182 trang sách lật 3D** và **180 mục thực hành tương tác**).
+Trang cổng thư viện điện tử (**Web Flipbook / PWA**) chia sẻ 6 bộ cẩm nang chăm sóc sức khỏe kiểu Nhật dành cho gia đình và người lớn tuổi Việt Nam (tổng cộng **262 trang sách lật 3D** và **242 mục thực hành tương tác**).
 
 ## Cấu trúc thư mục
 
 ```text
 genki-camnang/
-├── index.html                  # Trang chủ Tủ sách Genki Cẩm Nang (chọn & tìm kiếm 4 bộ cẩm nang)
-├── catalog.json                # Danh mục dữ liệu 4 bộ cẩm nang & các tập/chương phát hành
+├── index.html                  # Trang chủ Tủ sách Genki Cẩm Nang (chọn & tìm kiếm 6 bộ cẩm nang)
+├── catalog.json                # Danh mục dữ liệu 6 bộ cẩm nang & các tập/chương phát hành
 ├── qr.js                       # Bộ tạo mã QR SVG & xuất ảnh thẻ QR PNG (Offline ISO/IEC 18004)
 ├── manifest.json               # Cấu hình Web App Manifest (PWA)
 ├── wrangler.jsonc              # Cấu hình triển khai Cloudflare Workers / Assets
@@ -27,11 +27,21 @@ genki-camnang/
 │   ├── qr.js                   # Bộ tạo QR nội tuyến
 │   ├── manifest.json           # PWA manifest của Cẩm nang Số 3
 │   └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
-└── an-ngon-ngu-sau/            # Cẩm nang Số 4: Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật (40 trang, Chương 1–6)
-    ├── index.html              # Sách lật 3D tương tác + Giờ vàng sinh học + Sổ giấc ngủ + Thở Tanden + Thẻ An Tâm
+├── an-ngon-ngu-sau/            # Cẩm nang Số 4: Ăn ngon ngủ sâu — Dưỡng tâm kiểu Nhật (40 trang, Chương 1–6)
+│   ├── index.html              # Sách lật 3D tương tác + Giờ vàng sinh học + Sổ giấc ngủ + Thở Tanden + Thẻ An Tâm
+│   ├── qr.js                   # Bộ tạo QR nội tuyến
+│   ├── manifest.json           # PWA manifest của Cẩm nang Số 4
+│   └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
+├── omega-3-tim-nao/            # Cẩm nang Số 5: Omega-3: Khỏe tim, Sáng não kiểu Nhật (40 trang, Chương 1–6)
+│   ├── index.html              # Sách lật 3D tương tác + Thực đơn 3 ngày + Lịch Nō-tore + Sổ Omega-3 7 ngày
+│   ├── qr.js                   # Bộ tạo QR nội tuyến
+│   ├── manifest.json           # PWA manifest của Cẩm nang Số 5
+│   └── anh/                    # 35 tệp hình ảnh minh họa (gồm tranh màu nước ông bà Sato & sp-omega3.webp)
+└── tao-mozuku-fucoidan/        # Cẩm nang Số 6: Tảo Mozuku & Fucoidan: Lá chắn miễn dịch (40 trang, Chương 1–6)
+    ├── index.html              # Sách lật 3D tương tác + Thực đơn 3 ngày + Lịch Sáng/Tối + Sổ Fucoidan 7 ngày
     ├── qr.js                   # Bộ tạo QR nội tuyến
-    ├── manifest.json           # PWA manifest của Cẩm nang Số 4
-    └── anh/                    # 31 tệp hình ảnh minh họa của cẩm nang
+    ├── manifest.json           # PWA manifest của Cẩm nang Số 6
+    └── anh/                    # 35 tệp hình ảnh minh họa (gồm tranh màu nước ông bà Sato & sp-fucoidan.webp)
 ```
 
 ## Cá nhân hóa Đại lý / Nhà thuốc qua URL
