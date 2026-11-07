@@ -58,22 +58,93 @@ body{
 }
 *{box-sizing:border-box}
 
-/* ---------- Cuốn sách ---------- */
+/* ---------- Cuốn sách & Hiệu ứng lật trang Apple Books ---------- */
 .book{
   position:relative;width:min(100%, 440px, calc((100dvh - 120px) * 0.6));
-  aspect-ratio:0.6;container-type:inline-size;perspective:1800px;max-width:100%;
+  aspect-ratio:0.6;container-type:inline-size;perspective:2000px;max-width:100%;
+  user-select:none;-webkit-user-select:none;
 }
-.book::before{ /* gáy + bóng sách */
-  content:"";position:absolute;inset:6px -6px -8px 6px;border-radius:6px 14px 14px 6px;
-  background:#0f1a2e;opacity:.55;filter:blur(10px);
+.book::before{ /* bóng đổ cuốn sách trên mặt bàn chàm */
+  content:"";position:absolute;inset:8px -8px -12px 6px;border-radius:6px 16px 16px 6px;
+  background:#0c1526;opacity:.62;filter:blur(12px);z-index:0;pointer-events:none;
+}
+.book::after{ /* các lớp mép giấy xếp chồng bên phải như sách thật */
+  content:"";position:absolute;inset:2px -4px -3px 4px;border-radius:4px 15px 15px 4px;
+  background:linear-gradient(90deg, #e5dccb 0%, #f8f3e8 45%, #dfd4c0 78%, #f4ede0 100%);
+  box-shadow:2px 2px 0 #cdc0aa, 4px 5px 10px rgba(10,18,34,.38);
+  z-index:0;pointer-events:none;
 }
 .page{
   position:absolute;inset:0;background:var(--paper);border-radius:4px 14px 14px 4px;
   overflow:hidden;transform-origin:left center;backface-visibility:hidden;
   font-size:3.95cqw;line-height:1.48;
-  box-shadow:inset 10px 0 18px -14px rgba(60,40,20,.45), 0 1px 0 rgba(0,0,0,.08);
+  box-shadow:
+    inset 16px 0 24px -14px rgba(55,36,16,.42),
+    inset 3px 0 4px rgba(40,25,10,.15),
+    inset -1px 0 0 rgba(175,155,125,.35),
+    0 1px 0 rgba(0,0,0,.08);
+  will-change:clip-path,transform,filter;
 }
 .page[hidden]{display:none!important}
+.curl-overlay{
+  position:absolute;inset:0;border-radius:4px 14px 14px 4px;
+  overflow:hidden;pointer-events:none;z-index:6;
+}
+.curl-under-Export{
+  position:absolute;inset:0;pointer-events:none;z-index:1;
+}
+.curl-axis{
+  position:absolute;top:0;left:0;width:0;height:0;pointer-events:none;z-index:3;
+}
+.curl-cast-shadow{
+  position:absolute;left:0;top:-120cqw;height:240cqw;width:76px;
+  background:linear-gradient(90deg,
+    rgba(16,10,4,.48) 0%,
+    rgba(16,10,4,.30) 16%,
+    rgba(16,10,4,.14) 40%,
+    rgba(16,10,4,.04) 72%,
+    transparent 100%);
+  pointer-events:none;
+}
+.curl-front-crease{
+  position:absolute;right:0;top:-120cqw;height:240cqw;width:28px;
+  background:linear-gradient(270deg,
+    rgba(30,18,8,.22) 0%,
+    rgba(30,18,8,.07) 50%,
+    transparent 100%);
+  pointer-events:none;
+}
+.curl-back-wrap{
+  position:absolute;inset:0;pointer-events:none;z-index:4;
+  filter:drop-shadow(-14px 5px 18px rgba(18,10,4,.32)) drop-shadow(-3px 1px 4px rgba(18,10,4,.20));
+}
+.curl-back-page{
+  position:absolute;inset:0;border-radius:4px 14px 14px 4px;overflow:hidden;
+  background:linear-gradient(135deg, #FBF6EC 0%, #EFE4D0 100%);
+  box-shadow:inset 0 0 0 1px rgba(175,155,125,.45);
+  will-change:clip-path,transform;
+}
+.curl-back-clone{
+  position:absolute;inset:0;pointer-events:none;
+  opacity:.085;filter:sepia(.25) contrast(.9) blur(.4px);
+}
+.curl-back-axis{
+  position:absolute;top:0;left:0;width:0;height:0;pointer-events:none;z-index:2;
+}
+.curl-back-shade{
+  position:absolute;left:0;top:-120cqw;height:240cqw;width:200px;
+  background:linear-gradient(90deg,
+    rgba(120,96,68,.46) 0%,
+    rgba(195,176,148,.24) 6%,
+    rgba(255,255,255,.94) 17%,
+    rgba(255,254,250,.82) 30%,
+    rgba(244,235,218,.42) 56%,
+    rgba(192,174,146,.52) 86%,
+    rgba(248,242,230,.85) 96%,
+    rgba(255,255,252,.96) 100%);
+  border-left:1px solid rgba(145,122,90,.42);
+  pointer-events:none;
+}
 .page-inner{position:absolute;inset:0;overflow-y:auto;padding:7cqw 7cqw 7.8cqw;display:flex;flex-direction:column;gap:2.8cqw;scrollbar-width:thin}
 .folio{position:absolute;bottom:3cqw;left:7cqw;right:7cqw;display:flex;justify-content:space-between;font-size:.72em;color:var(--ink-soft);letter-spacing:.04em;pointer-events:none}
 .folio b{color:var(--shu);font-weight:800}
@@ -1593,8 +1664,66 @@ body.large-text .page{font-size:4.38cqw;line-height:1.52}
     }catch(e){}
   }
 
+  // ---------- Hiệu ứng lật trang uốn cong tự nhiên kiểu Apple Books ----------
+  const curlOverlay=document.createElement('div');
+  curlOverlay.className='curl-overlay';
+  curlOverlay.hidden=true;
+  curlOverlay.setAttribute('aria-hidden','true');
+  curlOverlay.innerHTML=
+    '<div class="curl-axis" id="curl-axis">'+
+      '<div class="curl-cast-shadow" id="curl-cast-shadow"></div>'+
+      '<div class="curl-front-crease" id="curl-front-crease"></div>'+
+    '</div>'+
+    '<div class="curl-back-wrap" id="curl-back-wrap">'+
+      '<div class="curl-back-page" id="curl-back-page">'+
+        '<div class="curl-back-clone" id="curl-back-clone"></div>'+
+        '<div class="curl-back-axis" id="curl-back-axis">'+
+          '<div class="curl-back-shade" id="curl-back-shade"></div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  book.appendChild(curlOverlay);
+
+  const curlAxis=curlOverlay.querySelector('#curl-axis');
+  const curlCastShadow=curlOverlay.querySelector('#curl-cast-shadow');
+  const curlFrontCrease=curlOverlay.querySelector('#curl-front-crease');
+  const curlBackWrap=curlOverlay.querySelector('#curl-back-wrap');
+  const curlBackPage=curlOverlay.querySelector('#curl-back-page');
+  const curlBackClone=curlOverlay.querySelector('#curl-back-clone');
+  const curlBackAxis=curlOverlay.querySelector('#curl-back-axis');
+  const curlBackShade=curlOverlay.querySelector('#curl-back-shade');
+
+  function stripIds(node){
+    if(node.removeAttribute) node.removeAttribute('id');
+    if(node.querySelectorAll) node.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));
+    return node;
+  }
+
+  function prepareBackClone(sourcePage){
+    curlBackClone.innerHTML='';
+    const inner=sourcePage.querySelector('.page-inner');
+    const bleed=sourcePage.querySelector('.bleed');
+    const band=sourcePage.querySelector('.band');
+    if(bleed) curlBackClone.appendChild(stripIds(bleed.cloneNode(true)));
+    if(band) curlBackClone.appendChild(stripIds(band.cloneNode(true)));
+    if(inner) curlBackClone.appendChild(stripIds(inner.cloneNode(true)));
+  }
+
+  function cleanPageStyles(p){
+    if(!p) return;
+    p.style.clipPath='';
+    p.style.webkitClipPath='';
+    p.style.filter='';
+    p.style.transform='';
+  }
+
   function paint(){
-    pages.forEach((p,i)=>{p.hidden=i!==cur;p.style.zIndex=i===cur?2:1});
+    curlOverlay.hidden=true;
+    pages.forEach((p,i)=>{
+      cleanPageStyles(p);
+      p.hidden=i!==cur;
+      p.style.zIndex=i===cur?2:1;
+    });
     counter.textContent=(cur+1)+' / '+pages.length;
     prev.disabled=cur===0; next.disabled=cur===pages.length-1;
     const name=pages[cur].dataset.name;
@@ -1603,24 +1732,117 @@ body.large-text .page{font-size:4.38cqw;line-height:1.52}
     if(!shareSheet.hidden) updateSharePreview();
   }
 
-  function go(to){
+  // Render 1 frame của hiệu ứng uốn trang Apple Books:
+  // t in [0, 1]: 0 = trang trên nằm phẳng hoàn toàn (chưa lật), 1 = đã lật hẳn sang gáy trái
+  // tiltDeg: góc nghiêng đường gấp (dương = nhấc từ góc dưới phải, âm = nhấc từ góc trên phải)
+  function renderCurlFrame(topPage, underPage, t, tiltDeg){
+    const W=book.clientWidth||360;
+    const H=book.clientHeight||600;
+    const p=1-Math.max(0,Math.min(1,t)); // p=1 ở mép phải, p=0 ở gáy trái
+    const env=Math.sin(Math.PI*Math.max(0,Math.min(1,t)));
+    const alphaDeg=(tiltDeg||0)*env;
+    const alphaRad=alphaDeg*Math.PI/180;
+    const dx=(H*0.5)*Math.tan(alphaRad);
+
+    const xFold=p*W;
+    const xTop=xFold+dx;
+    const xBot=xFold-dx;
+
+    const xNear=Math.min(-40, Math.min(xTop,xBot)-80);
+    const xFar=Math.max(W+40, Math.max(xTop,xBot)+80);
+
+    // 1. Cắt phần trang trên (topPage) nằm bên trái đường gấp
+    const leftPoly='polygon('+xNear.toFixed(1)+'px -4px, '+xTop.toFixed(1)+'px -4px, '+xBot.toFixed(1)+'px '+(H+4)+'px, '+xNear.toFixed(1)+'px '+(H+4)+'px)';
+    topPage.style.clipPath=leftPoly;
+    topPage.style.webkitClipPath=leftPoly;
+
+    // 2. Trang dưới (underPage) sáng dần lên khi trang trên lật qua
+    const underBright=0.92+0.08*t;
+    underPage.style.filter='brightness('+underBright.toFixed(3)+')';
+
+    // 3. Cắt phần mặt sau của trang đang uốn (bên phải đường gấp trước khi phản chiếu)
+    const rightPoly='polygon('+xTop.toFixed(1)+'px -2px, '+xFar.toFixed(1)+'px -2px, '+xFar.toFixed(1)+'px '+(H+2)+'px, '+xBot.toFixed(1)+'px '+(H+2)+'px)';
+    curlBackPage.style.clipPath=rightPoly;
+    curlBackPage.style.webkitClipPath=rightPoly;
+
+    // Hệ số co hình trụ 3D khi giấy uốn cong (mép mới nhấc cong nhiều, giữa trang mở rộng)
+    const kCurl=0.64+0.24*Math.sin(Math.PI*0.5*t);
+    curlBackPage.style.transformOrigin=xFold.toFixed(1)+'px '+(H*0.5).toFixed(1)+'px';
+    curlBackPage.style.transform='rotate('+alphaDeg.toFixed(2)+'deg) scaleX('+(-kCurl).toFixed(3)+') rotate('+(-alphaDeg).toFixed(2)+'deg)';
+
+    // 4. Đặt trục đường gấp cho bóng đổ & ánh sáng hình trụ trên lưng giấy
+    const axisTf='translate3d('+xFold.toFixed(1)+'px,'+(H*0.5).toFixed(1)+'px,0) rotate('+alphaDeg.toFixed(2)+'deg)';
+    curlAxis.style.transform=axisTf;
+    curlBackAxis.style.transform=axisTf;
+
+    const flapSpan=Math.max(48, (1-p)*W + Math.abs(dx));
+    curlBackShade.style.width=flapSpan.toFixed(1)+'px';
+
+    // Độ rộng và độ đậm bóng đổ lên trang dưới biến thiên tự nhiên theo độ mở
+    const castW=(18+58*env)*(0.55+0.45*p);
+    const castAlpha=0.88*Math.pow(env,0.7);
+    curlCastShadow.style.width=castW.toFixed(1)+'px';
+    curlCastShadow.style.opacity=castAlpha.toFixed(3);
+
+    curlFrontCrease.style.width=(14+24*env).toFixed(1)+'px';
+    curlFrontCrease.style.opacity=(0.85*env).toFixed(3);
+    curlBackWrap.style.opacity=t>0.985 ? ((1-t)/0.015).toFixed(3) : '1';
+  }
+
+  let animRaf=0;
+  function animateCurl(topPage, underPage, fromT, toT, tiltDeg, durationMs, onDone){
+    if(animRaf) cancelAnimationFrame(animRaf);
+    const start=performance.now();
+    // Đường cong mượt kiểu Apple Books (nhấc nhẹ, lướt nhanh giữa chừng, hạ êm ở gáy)
+    function easeAppleBook(x){
+      return x<0.5
+        ? 4*x*x*x
+        : 1-Math.pow(-2*x+2,3)/2;
+    }
+    function step(now){
+      const raw=Math.min(1,Math.max(0,(now-start)/durationMs));
+      const e=easeAppleBook(raw);
+      const curT=fromT+(toT-fromT)*e;
+      renderCurlFrame(topPage, underPage, curT, tiltDeg);
+      if(raw<1){
+        animRaf=requestAnimationFrame(step);
+      }else{
+        animRaf=0;
+        onDone();
+      }
+    }
+    animRaf=requestAnimationFrame(step);
+  }
+
+  function go(to, opts){
     if(busy||to===cur||to<0||to>=pages.length) return;
     const from=pages[cur], target=pages[to];
-    if(reduce||!from.animate){cur=to;paint();return;}
+    if(reduce){cur=to;paint();return;}
     busy=true;
     const forward=to>cur;
+    from.hidden=false;
     target.hidden=false;
-    const mover=forward?from:target;
-    if(forward){target.style.zIndex=1;from.style.zIndex=3}else{target.style.zIndex=3;from.style.zIndex=1}
-    const frames=[
-      {transform:'rotateY(0deg)',filter:'brightness(1)'},
-      {transform:'rotateY(-95deg)',filter:'brightness(.82)'}
-    ];
-    const a=mover.animate(forward?frames:frames.slice().reverse(),{duration:520,easing:'cubic-bezier(.45,.05,.4,1)'});
-    let done=false;
-    const finish=()=>{if(done)return;done=true;a.cancel();cur=to;paint();busy=false};
-    a.onfinish=finish;
-    setTimeout(finish,700); // phòng khi trình duyệt chạy nền không báo xong
+
+    // Khi lật tới (forward): trang hiện tại (from) là trang trên bị cuốn từ phải sang trái, để lộ target bên dưới
+    // Khi lật lui (backward): trang đích (target) được kéo từ gáy trái trả về bên phải đè lên trang hiện tại (from)
+    const topPage=forward?from:target;
+    const underPage=forward?target:from;
+    underPage.style.zIndex=1;
+    topPage.style.zIndex=3;
+
+    prepareBackClone(topPage);
+    curlOverlay.hidden=false;
+
+    const startT=(opts&&typeof opts.startT==='number') ? opts.startT : (forward?0:1);
+    const endT=forward?1:0;
+    const tilt=(opts&&typeof opts.tiltDeg==='number') ? opts.tiltDeg : (forward?7.5:-6.5);
+    const dur=(opts&&opts.duration) || 640;
+
+    animateCurl(topPage, underPage, startT, endT, tilt, dur, ()=>{
+      cur=to;
+      paint();
+      busy=false;
+    });
   }
 
   prev.addEventListener('click',()=>go(cur-1));
@@ -1632,14 +1854,109 @@ body.large-text .page{font-size:4.38cqw;line-height:1.52}
     if(e.key==='ArrowLeft') go(cur-1);
   });
 
-  // vuốt
-  let sx=null, sy=null;
-  book.addEventListener('pointerdown',e=>{sx=e.clientX;sy=e.clientY});
-  book.addEventListener('pointerup',e=>{
-    if(sx===null) return;
-    const dx=e.clientX-sx, dy=e.clientY-sy; sx=null;
-    if(Math.abs(dx)>45 && Math.abs(dx)>Math.abs(dy)*1.3){ dx<0?go(cur+1):go(cur-1); }
+  // Vuốt hoặc kéo trực tiếp mép trang theo ngón tay / chuột kiểu Apple Books
+  let dragState=null;
+  book.addEventListener('pointerdown',e=>{
+    if(busy||reduce) return;
+    if(e.button && e.button!==0) return;
+    const tag=(e.target&&e.target.tagName)||'';
+    if(['INPUT','TEXTAREA','SELECT','BUTTON','A','LABEL'].includes(tag)) return;
+    if(e.target.closest && e.target.closest('button,a,input,select,textarea,.check,.day,.rf,.nh,.toc-row')) return;
+    const rect=book.getBoundingClientRect();
+    dragState={
+      id:e.pointerId,
+      sx:e.clientX,
+      sy:e.clientY,
+      startTime:performance.now(),
+      rectW:rect.width||360,
+      rectH:rect.height||600,
+      relY:Math.max(0.1,Math.min(0.9,(e.clientY-rect.top)/(rect.height||600))),
+      mode:null, // 'next' | 'prev' | 'scroll'
+      topPage:null,
+      underPage:null,
+      targetIdx:-1,
+      curT:0,
+      tiltDeg:0
+    };
   });
+
+  window.addEventListener('pointermove',e=>{
+    if(!dragState||e.pointerId!==dragState.id) return;
+    const dx=e.clientX-dragState.sx;
+    const dy=e.clientY-dragState.sy;
+
+    if(!dragState.mode){
+      if(Math.abs(dy)>12 && Math.abs(dy)>Math.abs(dx)*1.15){
+        dragState=null;
+        return;
+      }
+      if(Math.abs(dx)>10 && Math.abs(dx)>Math.abs(dy)*1.1){
+        const forward=dx<0;
+        const targetIdx=forward?cur+1:cur-1;
+        if(targetIdx<0||targetIdx>=pages.length){
+          dragState=null;
+          return;
+        }
+        dragState.mode=forward?'next':'prev';
+        dragState.targetIdx=targetIdx;
+        dragState.topPage=forward?pages[cur]:pages[targetIdx];
+        dragState.underPage=forward?pages[targetIdx]:pages[cur];
+        dragState.tiltDeg=(dragState.relY-0.45)*16;
+        busy=true;
+        dragState.topPage.hidden=false;
+        dragState.underPage.hidden=false;
+        dragState.underPage.style.zIndex=1;
+        dragState.topPage.style.zIndex=3;
+        prepareBackClone(dragState.topPage);
+        curlOverlay.hidden=false;
+      }else{
+        return;
+      }
+    }
+
+    if(dragState.mode==='next'){
+      dragState.curT=Math.max(0.01,Math.min(0.98,-dx/(dragState.rectW*0.88)));
+    }else if(dragState.mode==='prev'){
+      dragState.curT=Math.max(0.02,Math.min(0.99,1-(dx/(dragState.rectW*0.88))));
+    }
+    const liveRelY=Math.max(-0.45,Math.min(0.45,((e.clientY-dragState.sy)/dragState.rectH)+(dragState.relY-0.5)));
+    dragState.tiltDeg=liveRelY*18;
+    renderCurlFrame(dragState.topPage, dragState.underPage, dragState.curT, dragState.tiltDeg);
+  });
+
+  function endDrag(e){
+    if(!dragState||(e&&e.pointerId!==dragState.id)) return;
+    const st=dragState;
+    dragState=null;
+    if(!st.mode){
+      // Nếu chỉ chạm/vuốt rất nhanh chưa kịp vào dragmove
+      if(e){
+        const dx=e.clientX-st.sx, dy=e.clientY-st.sy;
+        if(Math.abs(dx)>42 && Math.abs(dx)>Math.abs(dy)*1.3){
+          dx<0?go(cur+1):go(cur-1);
+        }
+      }
+      return;
+    }
+    const dt=Math.max(16,performance.now()-st.startTime);
+    const vx=(e ? (e.clientX-st.sx) : 0)/dt;
+    const forward=st.mode==='next';
+    const shouldComplete=forward
+      ? (st.curT>0.22 || vx<-0.32)
+      : (st.curT<0.78 || vx>0.32);
+
+    const endT=shouldComplete ? (forward?1:0) : (forward?0:1);
+    const remain=Math.abs(endT-st.curT);
+    const dur=Math.max(220,Math.min(520,Math.round(remain*560)));
+
+    animateCurl(st.topPage, st.underPage, st.curT, endT, st.tiltDeg, dur, ()=>{
+      if(shouldComplete) cur=st.targetIdx;
+      paint();
+      busy=false;
+    });
+  }
+  window.addEventListener('pointerup',endDrag);
+  window.addEventListener('pointercancel',endDrag);
 
   // ô đánh dấu + dấu 7 ngày, nhớ trong máy người xem
   const KEY='sk-nhat-mau-v1';
