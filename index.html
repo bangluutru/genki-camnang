@@ -7,7 +7,7 @@
   <meta name="description" content="Tủ sách điện tử tương tác 10 bộ cẩm nang chia sẻ thói quen sống khỏe kiểu Nhật, phòng ngừa đột quỵ, rèn gân cốt dẻo dai, dưỡng tâm ngủ sâu, bổ sung Omega-3, Fucoidan tảo nâu Mozuku, tắm ấm, trà xanh, hội bạn Moai và khám Ningen Dock.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Genki Cẩm Nang — Tủ Sách Sống Khỏe Kiểu Nhật">
-  <meta property="og:description" content="Chọn nhanh không cuộn hoặc duyệt kệ sách 10 bộ cẩm nang Sống khỏe kiểu Nhật (450 trang sách lật 3D & bảng đóng dấu 7 ngày).">
+  <meta property="og:description" content="Chọn nhanh hoặc duyệt kệ sách 10 bộ cẩm nang Sống khỏe kiểu Nhật (450 trang sách lật 3D & bảng đóng dấu 7 ngày).">
   <meta property="og:image" content="song-khoe-kieu-nhat/anh/c1-mo-chuong.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#F7F1E5" id="meta-theme-color">
@@ -307,32 +307,32 @@
        1. TOP STICKY HEADER (Brand + View Mode Switch + 3-Theme Switch + Font + QR)
        ======================================================================== -->
   <header class="sticky top-0 z-50 backdrop-blur-md border-b theme-border transition-colors" style="background-color: var(--header-bg);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4">
       
       <!-- Brand Identity -->
-      <a href="./" class="flex items-center gap-2.5 sm:gap-3 shrink-0 group text-decoration-none">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl btn-primary-seal flex items-center justify-center font-jp font-black text-base sm:text-lg shadow-sm group-hover:scale-105 transition-transform">
+      <a href="./" class="flex items-center gap-2 sm:gap-3 shrink-0 group text-decoration-none min-w-0">
+        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl btn-primary-seal flex items-center justify-center font-jp font-black text-sm sm:text-lg shadow-sm group-hover:scale-105 transition-transform shrink-0">
           健康
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col min-w-0">
           <div class="flex items-center gap-1.5">
-            <span class="font-extrabold text-sm sm:text-base tracking-tight theme-text">Genki Cẩm Nang</span>
+            <span class="font-extrabold text-sm sm:text-base tracking-tight theme-text truncate">Genki Cẩm Nang</span>
             <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold" style="background-color: var(--secondary-soft); color: var(--secondary);">10 Bộ · 450 Trang 3D</span>
           </div>
           <span class="hidden sm:block text-xs theme-text-muted font-medium leading-tight">Tủ Sách Sống Khỏe Kiểu Nhật · HSC Genki Fami</span>
-          <span class="sm:hidden text-[10px] theme-text-muted font-medium leading-tight">Tủ Sách Sống Khỏe</span>
+          <span class="sm:hidden text-[10px] theme-text-muted font-medium leading-tight truncate">Tủ Sách Sống Khỏe</span>
         </div>
       </a>
 
-      <!-- Center: View Mode Switcher (Chọn nhanh Không cuộn vs Kệ sách Đầy đủ) -->
+      <!-- Center: View Mode Switcher (Chọn nhanh vs Kệ sách) -->
       <div class="hidden md:flex items-center p-1 rounded-xl border theme-border" style="background-color: var(--bg-subtle);" role="tablist" aria-label="Chế độ xem tủ sách">
         <button type="button" id="btn-mode-quick" onclick="setAppMode('quick')" class="px-3.5 py-1.5 rounded-lg text-xs lg:text-sm font-bold flex items-center gap-1.5 transition-all">
           <span class="material-symbols-outlined text-[18px]">bolt</span>
-          <span>Chọn nhanh (Không cuộn)</span>
+          <span>Chọn nhanh</span>
         </button>
         <button type="button" id="btn-mode-bookshelf" onclick="setAppMode('bookshelf')" class="px-3.5 py-1.5 rounded-lg text-xs lg:text-sm font-bold flex items-center gap-1.5 transition-all">
           <span class="material-symbols-outlined text-[18px]">shelves</span>
-          <span>Kệ sách đầy đủ</span>
+          <span>Kệ sách</span>
         </button>
       </div>
 
@@ -341,45 +341,44 @@
         
         <!-- 3-Theme Switcher Pill -->
         <div class="flex items-center p-1 rounded-xl border theme-border" style="background-color: var(--bg-subtle);" role="group" aria-label="Chọn giao diện Sáng, Sepia hoặc Tối">
-          <button type="button" id="btn-theme-light" onclick="setTheme('light')" class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Sáng (Trang nhã)">
+          <button type="button" id="btn-theme-light" onclick="setTheme('light')" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Sáng (Trang nhã)">
             <span class="material-symbols-outlined text-[16px]">light_mode</span>
             <span class="hidden xl:inline">Sáng</span>
           </button>
-          <button type="button" id="btn-theme-sepia" onclick="setTheme('sepia')" class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Giấy Washi Sepia (Ấm mắt)">
+          <button type="button" id="btn-theme-sepia" onclick="setTheme('sepia')" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Giấy Washi Sepia (Ấm mắt)">
             <span class="material-symbols-outlined text-[16px]">menu_book</span>
             <span class="hidden sm:inline">Sepia</span>
           </button>
-          <button type="button" id="btn-theme-dark" onclick="setTheme('dark')" class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Đọc ban đêm (Dịu mắt)">
+          <button type="button" id="btn-theme-dark" onclick="setTheme('dark')" class="px-1.5 sm:px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all" title="Giao diện Đọc ban đêm (Dịu mắt)">
             <span class="material-symbols-outlined text-[16px]">dark_mode</span>
             <span class="hidden xl:inline">Tối</span>
           </button>
         </div>
 
         <!-- Senior Font Size Toggle -->
-        <button type="button" id="btn-font-toggle" class="px-2.5 sm:px-3 py-1.5 rounded-xl border theme-border text-xs font-bold flex items-center gap-1 transition-all hover:opacity-90" style="background-color: var(--card); color: var(--ink);" aria-pressed="false" title="Bật/tắt chữ to rõ cho ông bà 50+">
+        <button type="button" id="btn-font-toggle" class="px-2 sm:px-3 py-1.5 rounded-xl border theme-border text-xs font-bold flex items-center justify-center gap-1 transition-all hover:opacity-90" style="background-color: var(--card); color: var(--ink);" aria-pressed="false" title="Bật/tắt chữ to rõ cho ông bà 50+">
           <span class="material-symbols-outlined text-[17px]" style="color: var(--primary);">format_size</span>
           <span id="font-toggle-lbl" class="hidden sm:inline">Chữ: Chuẩn</span>
         </button>
 
         <!-- Share & QR Modal Trigger -->
-        <button type="button" id="btn-open-share" class="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl btn-secondary-matcha text-xs font-bold flex items-center gap-1.5 shadow-sm">
+        <button type="button" id="btn-open-share" class="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl btn-secondary-matcha text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm" aria-label="Chia sẻ &amp; Mã QR" title="Chia sẻ &amp; Tạo Mã QR">
           <span class="material-symbols-outlined text-[17px]">qr_code_2</span>
           <span class="hidden lg:inline">Chia sẻ &amp; Mã QR</span>
-          <span class="lg:hidden">QR</span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Mode Switch Bar (visible on < md screens) -->
-    <div class="md:hidden px-4 pb-2.5 flex items-center gap-2">
+    <div class="md:hidden px-3 sm:px-4 pb-2.5 flex items-center gap-2">
       <div class="flex-1 grid grid-cols-2 p-1 rounded-xl border theme-border" style="background-color: var(--bg-subtle);">
         <button type="button" id="btn-mode-quick-mob" onclick="setAppMode('quick')" class="py-1.5 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1 transition-all">
           <span class="material-symbols-outlined text-[16px]">bolt</span>
-          <span>Chọn nhanh (Không cuộn)</span>
+          <span>Chọn nhanh</span>
         </button>
         <button type="button" id="btn-mode-bookshelf-mob" onclick="setAppMode('bookshelf')" class="py-1.5 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1 transition-all">
           <span class="material-symbols-outlined text-[16px]">shelves</span>
-          <span>Kệ sách đầy đủ</span>
+          <span>Kệ sách</span>
         </button>
       </div>
     </div>
@@ -423,7 +422,7 @@
           <div class="flex items-center gap-2">
             <span class="w-7 h-7 rounded-lg flex items-center justify-center font-jp font-bold text-xs" style="background-color: var(--primary-soft); color: var(--primary);">和</span>
             <div>
-              <h1 class="text-base sm:text-lg font-extrabold theme-text leading-tight">Bộ Chọn Nhanh Cẩm Nang (Không Cần Cuộn Trang)</h1>
+              <h1 class="text-base sm:text-lg font-extrabold theme-text leading-tight">Bộ Chọn Nhanh Cẩm Nang</h1>
               <p class="text-xs theme-text-muted hidden sm:block">Chạm chọn 1 trong 10 cuốn bên trái để xem ngay tóm tắt, mục lục &amp; mở sách lật 3D bên phải</p>
             </div>
           </div>
@@ -712,7 +711,7 @@
               </a>
               <button type="button" onclick="setAppMode('quick')" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold border hover:opacity-90 transition-all shadow-xs" style="background-color: var(--hero-card); border-color: var(--hero-border); color: var(--hero-text);">
                 <span class="material-symbols-outlined text-[18px]" style="color: var(--amber);">bolt</span>
-                <span>Mở Bộ Chọn Nhanh Không Cuộn</span>
+                <span>Mở Bộ Chọn Nhanh</span>
               </button>
               <button type="button" id="hero-share-btn" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold border hover:opacity-90 transition-all shadow-xs" style="background-color: var(--hero-card); border-color: var(--hero-border); color: var(--hero-text);">
                 <span class="material-symbols-outlined text-[18px]" style="color: var(--secondary);">qr_code_2</span>
@@ -928,9 +927,9 @@
         </div>
       </div>
       <div class="flex items-center gap-3 shrink-0">
-        <button type="button" onclick="setAppMode('quick')" class="font-bold hover:underline theme-text">Bộ chọn nhanh</button>
+        <button type="button" onclick="setAppMode('quick')" class="font-bold hover:underline theme-text">Chọn nhanh</button>
         <span>·</span>
-        <button type="button" onclick="setAppMode('bookshelf')" class="font-bold hover:underline theme-text">Kệ sách đầy đủ</button>
+        <button type="button" onclick="setAppMode('bookshelf')" class="font-bold hover:underline theme-text">Kệ sách</button>
         <span>·</span>
         <a href="song-khoe-kieu-nhat/#bia" class="js-book1-link font-bold hover:underline" style="color: var(--primary);">Đọc Số 1 ›</a>
       </div>
@@ -960,7 +959,7 @@
         </button>
         <button type="button" id="mob-nav-shelf" onclick="setAppMode('bookshelf')" class="py-1.5 rounded-lg flex flex-col items-center justify-center gap-0.5">
           <span class="material-symbols-outlined text-[18px]">shelves</span>
-          <span>Kệ đầy đủ</span>
+          <span>Kệ sách</span>
         </button>
         <button type="button" onclick="setAppMode('bookshelf'); setTimeout(() => document.getElementById('quick-practice').scrollIntoView({behavior:'smooth'}), 80);" class="py-1.5 rounded-lg flex flex-col items-center justify-center gap-0.5 theme-text-sec">
           <span class="material-symbols-outlined text-[18px]">toc</span>
@@ -976,7 +975,7 @@
       <div class="hidden sm:flex items-center gap-2">
         <button type="button" id="bottom-toggle-mode-btn" onclick="toggleAppMode()" class="px-3.5 py-1.5 rounded-xl border theme-border text-xs font-bold flex items-center gap-1.5 hover:opacity-90 transition-all" style="background-color: var(--card); color: var(--ink);">
           <span class="material-symbols-outlined text-[16px]" style="color: var(--amber);">swap_horiz</span>
-          <span id="bottom-toggle-mode-lbl">Xem Kệ sách đầy đủ</span>
+          <span id="bottom-toggle-mode-lbl">Xem Kệ sách</span>
         </button>
         <a href="song-khoe-kieu-nhat/#lam-thu-1" class="js-book1-link px-3.5 py-1.5 rounded-xl btn-stamp-soft text-xs font-bold flex items-center gap-1">
           <span class="font-jp font-black">済</span>
@@ -2672,7 +2671,7 @@
 
       const bottomToggleLbl = document.getElementById('bottom-toggle-mode-lbl');
       if (bottomToggleLbl) {
-        bottomToggleLbl.textContent = (currentAppMode === 'quick') ? 'Xem Kệ sách đầy đủ' : 'Mở Bộ chọn nhanh (Không cuộn)';
+        bottomToggleLbl.textContent = (currentAppMode === 'quick') ? 'Xem Kệ sách' : 'Mở Chọn nhanh';
       }
     };
 
