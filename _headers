@@ -1,9 +1,11 @@
 # Chống nhúng (clickjacking): chỉ chính trang này và GENKI Portal (bản chính +
 # preview) được nhúng camnang, để nhân sự đọc ngay trong portal. Dùng CSP
+# THB Dashboard (jpvn-portal) cũng phải có mặt: portal thường được mở bên trong
+# Dashboard, và frame-ancestors kiểm tra MỌI lớp khung bao ngoài, không chỉ portal.
 # frame-ancestors vì X-Frame-Options không cho liệt kê tên miền được phép.
 /*
   X-Content-Type-Options: nosniff
-  Content-Security-Policy: frame-ancestors 'self' https://portal.genkifami.vn https://genki-portal.pages.dev https://*.genki-portal.pages.dev
+  Content-Security-Policy: frame-ancestors 'self' https://portal.genkifami.vn https://genki-portal.pages.dev https://*.genki-portal.pages.dev https://jpvn-portal.pages.dev https://*.jpvn-portal.pages.dev
   Referrer-Policy: strict-origin-when-cross-origin
 
 /*/anh/*
