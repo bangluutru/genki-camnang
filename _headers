@@ -1,6 +1,9 @@
+# Chống nhúng (clickjacking): chỉ chính trang này và GENKI Portal (bản chính +
+# preview) được nhúng camnang, để nhân sự đọc ngay trong portal. Dùng CSP
+# frame-ancestors vì X-Frame-Options không cho liệt kê tên miền được phép.
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self' https://portal.genkifami.vn https://genki-portal.pages.dev https://*.genki-portal.pages.dev
   Referrer-Policy: strict-origin-when-cross-origin
 
 /*/anh/*
